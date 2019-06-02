@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>Archives | Mr. Liu&#39;s blog</title>
+  <title>Nginx+Tomcat搭建集群环境 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr. Liu&#39;s blog">
-<meta property="og:url" content="https://lzxhh2017.github.io/archives/index.html">
+  <meta name="description" content="Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx+Tomcat搭建集群环境">
+<meta property="og:url" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
+<meta property="og:description" content="Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/1.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/2.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/3.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/4.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/5.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/6.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/7.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/8.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/9.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/10.png">
+<meta property="og:updated_time" content="2019-06-02T14:50:03.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr. Liu&#39;s blog">
+<meta name="twitter:title" content="Nginx+Tomcat搭建集群环境">
+<meta name="twitter:description" content="Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -136,130 +151,203 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Nginx-Tomcat搭建集群环境" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Nginx+Tomcat搭建集群环境
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/02/Nginx-Tomcat搭建集群环境/" class="archive-article-date">
+
+        
+        <a href="/2019/06/02/Nginx-Tomcat搭建集群环境/" class="archive-article-date">
   	<time datetime="2019-06-02T14:38:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/02/Nginx-Tomcat搭建集群环境/">Nginx+Tomcat搭建集群环境</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<p><strong>一、Nginx介绍</strong></p>
+<p>Nginx是一款高性能的http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。官方测试nginx能够支支撑5万并发链接，并且cpu、内存等资源消耗却非常低，运行非常稳定。</p>
+<p>应用场景：</p>
+<ul>
+<li>http服务器。Nginx可以独立提供http服务。可以做网页静态服务器。</li>
+<li>虚拟主机。可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。</li>
+<li>反向代理，负载均衡。当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用nginx做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。</li>
+</ul>
+<p><strong>二、tomcat集群</strong></p>
+<ul>
+<li>提高服务的性能，例如计算处理能力、并发能力等，以及实现服务的高可用性。</li>
+<li>提供项目架构的横向扩展能力，增加集群中的机器就能提高集群的性能。</li>
+</ul>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/1.jpg" alt></p>
+<p><strong>三、实现步骤</strong></p>
+<p>1、安装Nginx，通过<a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">https://nginx.org/en/download.html</a> 下载，这里用的版本是nginx-1.14.2，下载解压即可。</p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/2.jpg" alt></p>
+<p>2、准备两个tomcat</p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/3.png" alt></p>
+<p>3、分别修改两个tomcat的启动端口，下面以apache-tomcat-7.0.202为例，打开server.xml</p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/4.jpg" alt></p>
+<p>需要修改三处端口号：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8007"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8081"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">            <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">              <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8011"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
+<p>4、启动两个tomcat（运行bin文件夹下面的<strong>startup.bat</strong>），然后在浏览器中访问，查看是否启动正常，这里是修改了<strong>/webapps/ROOT</strong>路径下的默认页面index.jsp文件，访问如下图所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/5.png" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/6.png" alt></p>
+<p>5、访问正常后，进行配置Nginx来实现负载均衡，打开Nginx文件夹中的<strong>nginx.conf</strong>文件</p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/7.jpg" alt></p>
+<p>核心配置如下</p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/8.jpg" alt></p>
+<p>6、配置完成后，启动Nginx:</p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/9.png" alt></p>
+<p>7、浏览器进行访问localhost查看运行状况。（<strong>upstream</strong>指定了集群服务的各个服务的地址，<strong>weight</strong>来增加某个服务器的权重，也就意味着请求会被多转发到这个服务器上。）</p>
+<p><img src="//lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/10.png" alt></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/06/02/Nginx-Tomcat搭建集群环境/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/02/Oracle-11g导出空表、少表的解决方法/" class="archive-article-date">
-  	<time datetime="2019-06-02T14:32:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/02/Oracle-11g导出空表、少表的解决方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Oracle 11g导出空表、少表的解决方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/02/Oracle-11g导出空表、少表的解决方法/">Oracle 11g导出空表、少表的解决方法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/02/Oracle和MySQL递归查询本下级/" class="archive-article-date">
-  	<time datetime="2019-06-02T13:14:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/02/Oracle和MySQL递归查询本下级/">Oracle和MySQL递归查询本下级</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/02/Oracle数据库初始化脚本/" class="archive-article-date">
-  	<time datetime="2019-06-02T12:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/02/Oracle数据库初始化脚本/">Oracle数据库初始化脚本</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -282,8 +370,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
