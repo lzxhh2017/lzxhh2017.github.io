@@ -168,26 +168,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Oracle数据库"><a href="#Oracle数据库" class="headerlink" title="Oracle数据库"></a>Oracle数据库</h4><p>结构表如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table regions(</span><br><span class="line">    region_id number(8) primary key,</span><br><span class="line">    p_region_id number(10),</span><br><span class="line">    region_path varchar2(255),</span><br><span class="line">    region_grade number(8),</span><br><span class="line">    local_name varchar2(100),</span><br><span class="line">    zipcode varchar2(20),</span><br><span class="line">    cod varchar2(4)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-
-<p>查找一个节点下面的所有节点，其中region_id是传入的参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM regions START WITH region_id = 1 connect BY prior region_id = p_region_id;</span><br></pre></td></tr></table></figure>
-
-<p>查询结果如下所示：</p>
-<p><img src="//lzxhh2017.github.io/2019/06/02/Oracle和MySQL递归查询本下级/oracle.png" alt="Oracle"></p>
-<h4 id="MySql数据库"><a href="#MySql数据库" class="headerlink" title="MySql数据库"></a>MySql数据库</h4><p>创建表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `es_regions`;</span><br><span class="line">CREATE TABLE `regions` (</span><br><span class="line">  `region_id` int(10) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `p_region_id` int(10) DEFAULT NULL,</span><br><span class="line">  `region_path` varchar(255) DEFAULT NULL,</span><br><span class="line">  `region_grade` int(8) DEFAULT NULL,</span><br><span class="line">  `local_name` varchar(100) NOT NULL,</span><br><span class="line">  `zipcode` varchar(20) DEFAULT NULL,</span><br><span class="line">  `cod` varchar(4) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`region_id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=489 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
-
-<p>利用find_in_set()函数和group_concat()函数实现递归查询：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">DROP FUNCTION IF EXISTS querychild;</span><br><span class="line"></span><br><span class="line">SET GLOBAL log_bin_trust_function_creators = 1;</span><br><span class="line">DELIMITER $$</span><br><span class="line">CREATE FUNCTION querychild(param INT)</span><br><span class="line">RETURNS VARCHAR(4000)</span><br><span class="line">BEGIN</span><br><span class="line">DECLARE temp VARCHAR(4000);</span><br><span class="line">DECLARE sname VARCHAR(4000);</span><br><span class="line"></span><br><span class="line">SET temp = &apos;$&apos;;</span><br><span class="line">SET sname = CAST(param AS CHAR);</span><br><span class="line">WHILE sname IS NOT NULL DO</span><br><span class="line">SET temp = CONCAT(temp,&apos;,&apos;,sname);</span><br><span class="line">SELECT GROUP_CONCAT(region_id) INTO sname FROM regions WHERE FIND_IN_SET(p_region_id,sname)&gt;0;</span><br><span class="line">END WHILE;</span><br><span class="line">RETURN temp;</span><br><span class="line">END $$</span><br></pre></td></tr></table></figure>
-
-<p>调用方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM regions WHERE FIND_IN_SET(region_id, querychild(1));</span><br></pre></td></tr></table></figure>
-
-<p>查询结果如下所示：</p>
-<p><img src="//lzxhh2017.github.io/2019/06/02/Oracle和MySQL递归查询本下级/mysql.jpg" alt="MySQL"></p>
-
+        <p>Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。</p>
+        
+          <a class="article-more-a" href="/2019/06/02/Oracle和MySQL递归查询本下级/#more">more >></a>
+        
       
 
       

@@ -17,7 +17,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Oracle和MySQL递归查询本下级/oracle.png">
 <meta property="og:image" content="https://lzxhh2017.github.io/2019/06/02/Oracle和MySQL递归查询本下级/mysql.jpg">
-<meta property="og:updated_time" content="2019-06-02T13:57:59.223Z">
+<meta property="og:updated_time" content="2019-06-02T14:06:15.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle和MySQL递归查询本下级">
 <meta name="twitter:description" content="Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。">
@@ -173,7 +173,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Oracle数据库"><a href="#Oracle数据库" class="headerlink" title="Oracle数据库"></a>Oracle数据库</h4><p>结构表如下：</p>
+        <p>Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。</p>
+<a id="more"></a>
+
+<h4 id="Oracle数据库"><a href="#Oracle数据库" class="headerlink" title="Oracle数据库"></a>Oracle数据库</h4><p>结构表如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table regions(</span><br><span class="line">    region_id number(8) primary key,</span><br><span class="line">    p_region_id number(10),</span><br><span class="line">    region_path varchar2(255),</span><br><span class="line">    region_grade number(8),</span><br><span class="line">    local_name varchar2(100),</span><br><span class="line">    zipcode varchar2(20),</span><br><span class="line">    cod varchar2(4)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <p>查找一个节点下面的所有节点，其中region_id是传入的参数：</p>
