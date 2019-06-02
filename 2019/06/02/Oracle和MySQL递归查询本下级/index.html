@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
 <meta property="og:description" content="Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/.com//oracle.png">
-<meta property="og:image" content="http://yoursite.com/.com//mysql.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/06/02/Oracle和MySQL递归查询本下级/oracle.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/02/Oracle和MySQL递归查询本下级/mysql.jpg">
 <meta property="og:updated_time" content="2019-06-02T13:28:20.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle和MySQL递归查询本下级">
 <meta name="twitter:description" content="Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。">
-<meta name="twitter:image" content="http://yoursite.com/.com//oracle.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/02/Oracle和MySQL递归查询本下级/oracle.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -180,7 +180,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM regions START WITH region_id = 1 connect BY prior region_id = p_region_id;</span><br></pre></td></tr></table></figure>
 
 <p>查询结果如下所示：</p>
-<p><img src="/.com//oracle.png" alt="lbxx"></p>
+<p><img src="//yoursite.com/2019/06/02/Oracle和MySQL递归查询本下级/oracle.png" alt="lbxx"></p>
 <h4 id="Mysql数据库"><a href="#Mysql数据库" class="headerlink" title="Mysql数据库"></a>Mysql数据库</h4><p>创建表</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `es_regions`;</span><br><span class="line">CREATE TABLE `regions` (</span><br><span class="line">  `region_id` int(10) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `p_region_id` int(10) DEFAULT NULL,</span><br><span class="line">  `region_path` varchar(255) DEFAULT NULL,</span><br><span class="line">  `region_grade` int(8) DEFAULT NULL,</span><br><span class="line">  `local_name` varchar(100) NOT NULL,</span><br><span class="line">  `zipcode` varchar(20) DEFAULT NULL,</span><br><span class="line">  `cod` varchar(4) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`region_id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=489 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
 
@@ -191,7 +191,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM regions WHERE FIND_IN_SET(region_id, querychild(1));</span><br></pre></td></tr></table></figure>
 
 <p>查询结果如下所示：</p>
-<p><img src="/.com//mysql.jpg" alt="lbxx"></p>
+<p><img src="//yoursite.com/2019/06/02/Oracle和MySQL递归查询本下级/mysql.jpg" alt="lbxx"></p>
 
       
 
