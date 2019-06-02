@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
 <meta property="og:description" content="Oracle数据库初始化：创建表空间；创建用户并赋予权限；数据导入。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-02T13:01:56.586Z">
+<meta property="og:updated_time" content="2019-06-02T14:08:47.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle数据库初始化脚本">
 <meta name="twitter:description" content="Oracle数据库初始化：创建表空间；创建用户并赋予权限；数据导入。">
@@ -170,7 +170,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create tablespace mhpt datafile &apos;E:\htzqjj\ts_data.ora&apos; size 1000m;</span><br><span class="line">select file_id from dba_data_files where tablespace_name=&apos;MHPT&apos;;</span><br><span class="line">alter database datafile 9 autoextend on next 10M;  --9是之前查出的file_id;</span><br></pre></td></tr></table></figure>
+        <p>Oracle数据库初始化：创建表空间；创建用户并赋予权限；数据导入。</p>
+<a id="more"></a>
+
+<h4 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create tablespace mhpt datafile &apos;E:\htzqjj\ts_data.ora&apos; size 1000m;</span><br><span class="line">select file_id from dba_data_files where tablespace_name=&apos;MHPT&apos;;</span><br><span class="line">alter database datafile 9 autoextend on next 10M;  --9是之前查出的file_id;</span><br></pre></td></tr></table></figure>
 
 <h4 id="创建用户并赋予权限"><a href="#创建用户并赋予权限" class="headerlink" title="创建用户并赋予权限"></a>创建用户并赋予权限</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">grant create any index to NAME;</span><br><span class="line">grant create database link to NAME;</span><br><span class="line">grant create procedure to NAME;</span><br><span class="line">grant create sequence to NAME;</span><br><span class="line">grant create table to NAME;</span><br><span class="line">grant create view to NAME;</span><br><span class="line">grant debug connect session to NAME;</span><br><span class="line">grant delete any table to NAME;</span><br><span class="line">grant select any table to NAME;</span><br><span class="line">grant unlimited tablespace to NAME;</span><br><span class="line">grant update any table to NAME;</span><br><span class="line">grant dba to NAME;</span><br><span class="line">grant connect to NAME;</span><br><span class="line">grant resource to NAME;</span><br></pre></td></tr></table></figure>
 
