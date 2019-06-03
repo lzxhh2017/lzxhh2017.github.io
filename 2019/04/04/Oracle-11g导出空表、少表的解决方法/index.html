@@ -9,6 +9,7 @@
   <title>Oracle 11g导出空表、少表的解决方法 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treated的">
+<meta name="keywords" content="Oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle 11g导出空表、少表的解决方法">
 <meta property="og:url" content="https://lzxhh2017.github.io/2019/04/04/Oracle-11g导出空表、少表的解决方法/index.html">
@@ -16,7 +17,7 @@
 <meta property="og:description" content="Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treated的">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lzxhh2017.github.io/2019/04/04/Oracle-11g导出空表、少表的解决方法/1.png">
-<meta property="og:updated_time" content="2019-06-02T14:58:31.897Z">
+<meta property="og:updated_time" content="2019-06-03T12:01:03.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 11g导出空表、少表的解决方法">
 <meta name="twitter:description" content="Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treated的">
@@ -25,7 +26,7 @@
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/favicon.jpg">
+    <link rel="icon" href="/img/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -60,6 +61,12 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
+	        
+				<li><a href="/archives">归档</a></li>
+	        
+				<li><a href="/about">关于</a></li>
 	        
 			</ul>
 		</nav>
@@ -109,6 +116,12 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -124,10 +137,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
+		        
+					<li style="width: 25%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 25%"><a href="/archives">归档</a></li>
+		        
+					<li style="width: 25%"><a href="/about">关于</a></li>
 		        
 				</ul>
 			</nav>
@@ -217,7 +236,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Oracle//" class="article-tag-list-link color2">Oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -281,18 +322,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/05/Nginx-Tomcat搭建集群环境/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Nginx+Tomcat搭建集群环境
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/03/Oracle和MySQL递归查询本下级/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Oracle和MySQL递归查询本下级</div>
+    <a href="/2019/04/02/Oracle数据库初始化脚本/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Oracle数据库初始化脚本</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -408,6 +440,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
