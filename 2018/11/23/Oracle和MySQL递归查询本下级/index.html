@@ -6,31 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>Nginx+Tomcat搭建集群环境 | Mr. Liu&#39;s blog</title>
+  <title>Oracle和MySQL递归查询本下级 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
-<meta name="keywords" content="Nginx,Tomcat">
+  <meta name="description" content="前言Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。">
+<meta name="keywords" content="Oracle,MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx+Tomcat搭建集群环境">
-<meta property="og:url" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/index.html">
+<meta property="og:title" content="Oracle和MySQL递归查询本下级">
+<meta property="og:url" content="https://lzxhh2017.github.io/2018/11/23/Oracle和MySQL递归查询本下级/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
-<meta property="og:description" content="Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
+<meta property="og:description" content="前言Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/1.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/2.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/3.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/4.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/5.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/6.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/7.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/8.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/9.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/10.png">
-<meta property="og:updated_time" content="2019-06-12T11:37:24.898Z">
+<meta property="og:image" content="https://lzxhh2017.github.io/2018/11/23/Oracle和MySQL递归查询本下级/oracle.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2018/11/23/Oracle和MySQL递归查询本下级/mysql.jpg">
+<meta property="og:updated_time" content="2019-06-13T13:03:21.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx+Tomcat搭建集群环境">
-<meta name="twitter:description" content="Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
-<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/1.jpg">
+<meta name="twitter:title" content="Oracle和MySQL递归查询本下级">
+<meta name="twitter:description" content="前言Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2018/11/23/Oracle和MySQL递归查询本下级/oracle.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -170,20 +162,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Nginx-Tomcat搭建集群环境" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Oracle和MySQL递归查询本下级" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Nginx+Tomcat搭建集群环境
+      Oracle和MySQL递归查询本下级
     </h1>
   
 
         
-        <a href="/2019/04/05/Nginx-Tomcat搭建集群环境/" class="archive-article-date">
-  	<time datetime="2019-04-05T14:38:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-05</time>
+        <a href="/2018/11/23/Oracle和MySQL递归查询本下级/" class="archive-article-date">
+  	<time datetime="2018-11-23T11:14:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
 </a>
         
       </header>
@@ -191,44 +183,28 @@
     <div class="article-entry" itemprop="articleBody">
       
 	  
-        <p>Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。</p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>Oracle 操作(select…start with…connect by…prior);Mysql需要建立函数进行操作。</p>
 <a id="more"></a>
 
-<p><strong>一、Nginx介绍</strong></p>
-<p>Nginx是一款高性能的http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。官方测试nginx能够支支撑5万并发链接，并且cpu、内存等资源消耗却非常低，运行非常稳定。</p>
-<p>应用场景：</p>
-<ul>
-<li>http服务器。Nginx可以独立提供http服务。可以做网页静态服务器。</li>
-<li>虚拟主机。可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。</li>
-<li>反向代理，负载均衡。当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用nginx做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。</li>
-</ul>
-<p><strong>二、tomcat集群</strong></p>
-<ul>
-<li>提高服务的性能，例如计算处理能力、并发能力等，以及实现服务的高可用性。</li>
-<li>提供项目架构的横向扩展能力，增加集群中的机器就能提高集群的性能。</li>
-</ul>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/1.jpg" alt></p>
-<p><strong>三、实现步骤</strong></p>
-<p>1、安装Nginx，通过<a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">https://nginx.org/en/download.html</a> 下载，这里用的版本是nginx-1.14.2，下载解压即可。</p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/2.jpg" alt></p>
-<p>2、准备两个tomcat</p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/3.png" alt></p>
-<p>3、分别修改两个tomcat的启动端口，下面以apache-tomcat-7.0.202为例，打开server.xml</p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/4.jpg" alt></p>
-<p>需要修改三处端口号：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8007"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8081"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">            <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">              <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8011"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="Oracle数据库"><a href="#Oracle数据库" class="headerlink" title="Oracle数据库"></a>Oracle数据库</h4><p>结构表如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table regions(</span><br><span class="line">    region_id number(8) primary key,</span><br><span class="line">    p_region_id number(10),</span><br><span class="line">    region_path varchar2(255),</span><br><span class="line">    region_grade number(8),</span><br><span class="line">    local_name varchar2(100),</span><br><span class="line">    zipcode varchar2(20),</span><br><span class="line">    cod varchar2(4)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<p>4、启动两个tomcat（运行bin文件夹下面的<strong>startup.bat</strong>），然后在浏览器中访问，查看是否启动正常，这里是修改了<strong>/webapps/ROOT</strong>路径下的默认页面index.jsp文件，访问如下图所示：</p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/5.png" alt></p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/6.png" alt></p>
-<p>5、访问正常后，进行配置Nginx来实现负载均衡，打开Nginx文件夹中的<strong>nginx.conf</strong>文件</p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/7.jpg" alt></p>
-<p>核心配置如下</p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/8.jpg" alt></p>
-<p>6、配置完成后，启动Nginx:</p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/9.png" alt></p>
-<p>7、浏览器进行访问localhost查看运行状况。（<strong>upstream</strong>指定了集群服务的各个服务的地址，<strong>weight</strong>来增加某个服务器的权重，也就意味着请求会被多转发到这个服务器上。）</p>
-<p><img src="//lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/10.png" alt></p>
+<p>查找一个节点下面的所有节点，其中region_id是传入的参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM regions START WITH region_id = 1 connect BY prior region_id = p_region_id;</span><br></pre></td></tr></table></figure>
+
+<p>查询结果如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2018/11/23/Oracle和MySQL递归查询本下级/oracle.png" alt="Oracle"></p>
+<h4 id="MySql数据库"><a href="#MySql数据库" class="headerlink" title="MySql数据库"></a>MySql数据库</h4><p>创建表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE IF EXISTS `es_regions`;</span><br><span class="line">CREATE TABLE `regions` (</span><br><span class="line">  `region_id` int(10) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `p_region_id` int(10) DEFAULT NULL,</span><br><span class="line">  `region_path` varchar(255) DEFAULT NULL,</span><br><span class="line">  `region_grade` int(8) DEFAULT NULL,</span><br><span class="line">  `local_name` varchar(100) NOT NULL,</span><br><span class="line">  `zipcode` varchar(20) DEFAULT NULL,</span><br><span class="line">  `cod` varchar(4) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`region_id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=489 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+
+<p>利用find_in_set()函数和group_concat()函数实现递归查询：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">DROP FUNCTION IF EXISTS querychild;</span><br><span class="line"></span><br><span class="line">SET GLOBAL log_bin_trust_function_creators = 1;</span><br><span class="line">DELIMITER $$</span><br><span class="line">CREATE FUNCTION querychild(param INT)</span><br><span class="line">RETURNS VARCHAR(4000)</span><br><span class="line">BEGIN</span><br><span class="line">DECLARE temp VARCHAR(4000);</span><br><span class="line">DECLARE sname VARCHAR(4000);</span><br><span class="line"></span><br><span class="line">SET temp = &apos;$&apos;;</span><br><span class="line">SET sname = CAST(param AS CHAR);</span><br><span class="line">WHILE sname IS NOT NULL DO</span><br><span class="line">SET temp = CONCAT(temp,&apos;,&apos;,sname);</span><br><span class="line">SELECT GROUP_CONCAT(region_id) INTO sname FROM regions WHERE FIND_IN_SET(p_region_id,sname)&gt;0;</span><br><span class="line">END WHILE;</span><br><span class="line">RETURN temp;</span><br><span class="line">END $$</span><br></pre></td></tr></table></figure>
+
+<p>调用方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM regions WHERE FIND_IN_SET(region_id, querychild(1));</span><br></pre></td></tr></table></figure>
+
+<p>查询结果如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2018/11/23/Oracle和MySQL递归查询本下级/mysql.jpg" alt="MySQL"></p>
 
       
 
@@ -268,11 +244,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
@@ -284,7 +260,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Tomcat//" class="article-tag-list-link color2">Tomcat</a>
+        			<a href="/categories/Oracle//" class="article-tag-list-link color2">Oracle</a>
         		</li>
       		
 		</ul>
@@ -339,7 +315,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/04/05/Nginx-Tomcat搭建集群环境/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2018/11/23/Oracle和MySQL递归查询本下级/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -353,9 +329,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/12/04/Oracle-11g导出空表、少表的解决方法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Oracle 11g导出空表、少表的解决方法
+        
+      </div>
+    </a>
   
-    <a href="/2019/04/04/Oracle-11g导出空表、少表的解决方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Oracle 11g导出空表、少表的解决方法</div>
+  
+    <a href="/2018/11/21/Oracle数据库初始化脚本/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Oracle数据库初始化脚本</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -486,6 +471,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
             
             <div class="clearfix"></div>
