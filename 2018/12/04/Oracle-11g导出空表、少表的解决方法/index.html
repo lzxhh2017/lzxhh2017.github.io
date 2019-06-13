@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
   <title>Oracle 11g导出空表、少表的解决方法 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treate">
+  <meta name="description" content="前言 Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treat">
 <meta name="keywords" content="Oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle 11g导出空表、少表的解决方法">
 <meta property="og:url" content="https://lzxhh2017.github.io/2018/12/04/Oracle-11g导出空表、少表的解决方法/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
-<meta property="og:description" content="前言Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treate">
+<meta property="og:description" content="前言 Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treat">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://lzxhh2017.github.io/2018/12/04/Oracle-11g导出空表、少表的解决方法/1.png">
-<meta property="og:updated_time" content="2019-06-13T13:02:35.821Z">
+<meta property="og:updated_time" content="2019-06-13T13:15:30.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 11g导出空表、少表的解决方法">
-<meta name="twitter:description" content="前言Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treate">
+<meta name="twitter:description" content="前言 Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treat">
 <meta name="twitter:image" content="https://lzxhh2017.github.io/2018/12/04/Oracle-11g导出空表、少表的解决方法/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
@@ -182,7 +182,8 @@
     <div class="article-entry" itemprop="articleBody">
       
 	  
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treated的字段里是“NO”或者“YES”说明了某张表是否分配了segment。说白了是为了可以节省少量的空间。</p>
+        <p><strong>前言</strong></p>
+<p>Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treated的字段里是“NO”或者“YES”说明了某张表是否分配了segment。说白了是为了可以节省少量的空间。</p>
 <a id="more"></a>
 
 <p>解决方法如下：</p>
