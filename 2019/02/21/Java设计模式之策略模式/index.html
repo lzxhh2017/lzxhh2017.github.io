@@ -6,15 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>Archives: 2019/2 | Mr. Liu&#39;s blog</title>
+  <title>Java设计模式之策略模式 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr. Liu&#39;s blog">
-<meta property="og:url" content="https://lzxhh2017.github.io/archives/2019/02/index.html">
+  <meta name="description" content="前言 设计模式作为一种经典的开发实践常常需要我们去深入的理解，而策略模式作为设计模式的一种，使用频率也是相对来说比较高的，Java中TreeSet集合就采用了经典的策略模式的思想。">
+<meta name="keywords" content="设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java设计模式之策略模式">
+<meta property="og:url" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
+<meta property="og:description" content="前言 设计模式作为一种经典的开发实践常常需要我们去深入的理解，而策略模式作为设计模式的一种，使用频率也是相对来说比较高的，Java中TreeSet集合就采用了经典的策略模式的思想。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/1.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/2.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/3.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/4.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/5.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/6.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/7.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/8.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/9.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/10.jpg">
+<meta property="og:updated_time" content="2019-06-13T15:29:40.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr. Liu&#39;s blog">
+<meta name="twitter:title" content="Java设计模式之策略模式">
+<meta name="twitter:description" content="前言 设计模式作为一种经典的开发实践常常需要我们去深入的理解，而策略模式作为设计模式的一种，使用频率也是相对来说比较高的，Java中TreeSet集合就采用了经典的策略模式的思想。">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -154,36 +170,133 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Java设计模式之策略模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Java设计模式之策略模式
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/21/Java设计模式之策略模式/" class="archive-article-date">
+
+        
+        <a href="/2019/02/21/Java设计模式之策略模式/" class="archive-article-date">
   	<time datetime="2019-02-21T09:17:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/21/Java设计模式之策略模式/">Java设计模式之策略模式</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  
+        <p><strong>前言</strong></p>
+<p>设计模式作为一种经典的开发实践常常需要我们去深入的理解，而策略模式作为设计模式的一种，使用频率也是相对来说比较高的，Java中TreeSet集合就采用了经典的策略模式的思想。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/1.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/2.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/3.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/4.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/5.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/6.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/7.jpg" alt></p>
+<p><strong>简单工厂实现</strong></p>
+<p>面向对象的编程，并不是类越多越好，类的划分是为了封装，但分类的基础是抽象，具有相同的属性和功能的对象的抽象集合才是类。打一折和九折只是形式的不同，抽象分析出来，所有的打折算法都是一样的，应该是一个类。<br>代码结构图如下：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/8.jpg" alt></p>
+<p>现金收费抽象类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">CashSuper</span></span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">acceptCash</span><span class="params">(<span class="keyword">double</span> money)</span></span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>正常收费子类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CashNormal</span> <span class="keyword">implements</span> <span class="title">CashSuper</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">acceptCash</span><span class="params">(<span class="keyword">double</span> money)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> money;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打折收费子类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CashRebate</span> <span class="keyword">implements</span> <span class="title">CashSuper</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span>  moneyRebate = <span class="number">1</span>;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CashRebate</span><span class="params">(<span class="keyword">double</span> moneyRebate)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.moneyRebate = moneyRebate;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">acceptCash</span><span class="params">(<span class="keyword">double</span> money)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> money * moneyRebate;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>返利收费子类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CashReturn</span> <span class="keyword">implements</span> <span class="title">CashSuper</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span>  moneyCondition  = <span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span>  moneyReturn     = <span class="number">0</span>;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CashReturn</span><span class="params">(<span class="keyword">double</span> moneyCondition, <span class="keyword">double</span> moneyReturn)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.moneyCondition = moneyCondition;  </span><br><span class="line">        <span class="keyword">this</span>.moneyReturn = moneyReturn;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">acceptCash</span><span class="params">(<span class="keyword">double</span> money)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">double</span> result = money;  </span><br><span class="line">        <span class="keyword">if</span> (money &gt;= moneyCondition)  </span><br><span class="line">        &#123;  </span><br><span class="line">            result = money - money / moneyCondition * moneyReturn;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> result;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现金收费工厂类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CashFactory</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> CashSuper <span class="title">createCash</span><span class="params">(String type)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        CashSuper cs = <span class="keyword">null</span>;  </span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"正常收费"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cs = <span class="keyword">new</span> CashNormal();  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"满300返100"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cs = <span class="keyword">new</span> CashReturn(<span class="number">300</span>, <span class="number">100</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"打8折"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cs = <span class="keyword">new</span> CashRebate(<span class="number">0.8</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> cs;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>客户端程序：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">double</span>   total   = <span class="number">0</span>;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        consume(<span class="string">"正常收费"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line">        consume(<span class="string">"满300返100"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line">        consume(<span class="string">"打8折"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"总计:"</span> + total);  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">consume</span><span class="params">(String type, <span class="keyword">int</span> num, <span class="keyword">double</span> price)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        CashSuper csuper = CashFactory.createCash(type);  </span><br><span class="line">        <span class="keyword">double</span> totalPrices = <span class="number">0</span>;  </span><br><span class="line">        totalPrices = csuper.acceptCash(num * price);  </span><br><span class="line">        total += totalPrices;  </span><br><span class="line">        System.out.println(<span class="string">"单价:"</span> + price + <span class="string">" 数量:"</span> + num + <span class="string">"合计:"</span> + totalPrices);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于工厂本身包括了所有的收费方式，商场是可能经常性地更改打折额度和返利额度的，每次维护或扩展收费方式都要改动这个工厂，以致代码需要重新编译部署，这是非常糟糕的处理方式，所以用它不是最好的办法。</p>
+<p><strong>策略模式</strong></p>
+<p>它定义了算法家族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化，不会影响到使用算法的客户。<br>结构图如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/9.jpg" alt></p>
+<p>Strategy类，定义所有支持的算法的公共接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Strategy</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">algorithmInterface</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ConcreteStrategy封装了具体的算法或行为，继承于Strategy</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteStrategyA</span> <span class="keyword">implements</span> <span class="title">Strategy</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">algorithmInterface</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"算法A实现"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteStrategyB</span> <span class="keyword">implements</span> <span class="title">Strategy</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">algorithmInterface</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"算法A实现"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteStrategyC</span> <span class="keyword">implements</span> <span class="title">Strategy</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">algorithmInterface</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"算法C实现"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Context用一个ConcreteStrategy来配置，维护一个对Strategy对象的引用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Context</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> Strategy strategy;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Context</span><span class="params">(Strategy strategy)</span>  <span class="comment">//初始化时，传入具体的策略对象</span></span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.strategy = strategy;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextInterface</span><span class="params">()</span><span class="comment">//根据具体的策略对象，调用其算法的方法</span></span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        strategy.algorithmInterface();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>客户端代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        Context context;  </span><br><span class="line">        context = <span class="keyword">new</span> Context(<span class="keyword">new</span> ConcreteStrategyA());  </span><br><span class="line">        context.contextInterface();  </span><br><span class="line"></span><br><span class="line">        context = <span class="keyword">new</span> Context(<span class="keyword">new</span> ConcreteStrategyB());  </span><br><span class="line">        context.contextInterface();  </span><br><span class="line"></span><br><span class="line">        context = <span class="keyword">new</span> Context(<span class="keyword">new</span> ConcreteStrategyC());  </span><br><span class="line">        context.contextInterface();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>策略模式实现</strong></p>
+<p>正常收费CashNormal、打折收费CashRebate和返利收费CashReturn就是三个具体策略，也就是策略模式中说的具体算法。<br>代码结构图如下：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/10.jpg" alt></p>
+<p>CashContext类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CashContext</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    CashSuper cashSuper;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CashContext</span><span class="params">(CashSuper cashSuper)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.cashSuper = cashSuper;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">acceptCash</span><span class="params">(<span class="keyword">double</span> money)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> cashSuper.acceptCash(money);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>客户端代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">double</span>   total   = <span class="number">0</span>;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        consume(<span class="string">"正常收费"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line">        consume(<span class="string">"满300返100"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line">        consume(<span class="string">"打8折"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"总计:"</span> + total);  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">consume</span><span class="params">(String type, <span class="keyword">int</span> num, <span class="keyword">double</span> price)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        CashContext cashContext = <span class="keyword">null</span>;  </span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"正常收费"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cashContext = <span class="keyword">new</span> CashContext(<span class="keyword">new</span> CashNormal());  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"满300返100"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cashContext = <span class="keyword">new</span> CashContext(<span class="keyword">new</span> CashReturn(<span class="number">300</span>, <span class="number">100</span>));  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"打8折"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cashContext = <span class="keyword">new</span> CashContext(<span class="keyword">new</span> CashRebate(<span class="number">0.8</span>));  </span><br><span class="line">        &#125;  </span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> totalPrices = cashContext.acceptCash(num * price);  </span><br><span class="line">        total += totalPrices;  </span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"单价:"</span> + price + <span class="string">" 数量:"</span> + num + <span class="string">"合计:"</span> + totalPrices);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是代码还是老样子，需要在客户端判断用哪一个算法。如何优化呢？</p>
+<p><strong>策略与简单工厂结合</strong></p>
+<p>改造后的CashContext</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CashContext</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    CashSuper cashSuper;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CashContext</span><span class="params">(CashSuper cashSuper)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">this</span>.cashSuper = cashSuper;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CashContext</span><span class="params">(String type)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"正常收费"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cashSuper = <span class="keyword">new</span> CashNormal();  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"满300返100"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cashSuper = <span class="keyword">new</span> CashReturn(<span class="number">300</span>, <span class="number">100</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"打8折"</span>.equals(type))  </span><br><span class="line">        &#123;  </span><br><span class="line">            cashSuper = <span class="keyword">new</span> CashRebate(<span class="number">0.8</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">acceptCash</span><span class="params">(<span class="keyword">double</span> money)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> cashSuper.acceptCash(money);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>客户端代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">double</span>   total   = <span class="number">0</span>;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        consume(<span class="string">"正常收费"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line">        consume(<span class="string">"满300返100"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line">        consume(<span class="string">"打8折"</span>, <span class="number">1</span>, <span class="number">1000</span>);  </span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"总计:"</span> + total);  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">consume</span><span class="params">(String type, <span class="keyword">int</span> num, <span class="keyword">double</span> price)</span>  </span></span><br><span class="line"><span class="function">    </span>&#123;  </span><br><span class="line">        CashContext cashContext = <span class="keyword">new</span> CashContext(type);  </span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> totalPrices = cashContext.acceptCash(num * price);  </span><br><span class="line">        total += totalPrices;  </span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"单价:"</span> + price + <span class="string">" 数量:"</span> + num + <span class="string">"合计:"</span> + totalPrices);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>简单工厂模式需要让客户端认识两个类，CashSuper和CashFactory，而策略模式与简单工厂模式结合的用法，客户端就只需要认识一个类CashContext，耦合度更加降低。</p>
+<p><strong>策略模式解析</strong></p>
+<p>策略模式是一种定义一系列算法的方法，从概念上来看，所有这些算法完成的都是相同的工作，只是实现不同，它可以以相同的方式调用所有的算法，减少了各种算法与使用算法之间的耦合。</p>
+<p>策略模式的Strategy类层次为Context定义了一系列的可供重用的算法或行为。继承有助于析取出这些算法中的公共功能。</p>
+<p>简化了单元测试，因为每个算法都有自己的类，可以通过自己的接口单独测试。</p>
+<p>当不同的行为堆砌于一个类中，就很难避免使用条件语句来选择合适的行为。将这些行为封装在一个个独立的Strategy类中，可以在使用这些行为的类中消除条件语句。</p>
+<p>策略模式就是用来封装算法的，但在实践中，我们发现可以用它来封装几乎任何类型的规则，只要在分析过程中听到需要在不同时间应用不同的业务规则，就可以考虑使用策略模式处理这种变化的可能性。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,7 +308,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -208,168 +321,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/02/21/Java设计模式之策略模式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/20/Java设计模式之工厂模式/" class="archive-article-date">
-  	<time datetime="2019-02-20T03:02:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/20/Java设计模式之工厂模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java设计模式之工厂模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/20/Java设计模式之工厂模式/">Java设计模式之工厂模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/19/Java关键字static/" class="archive-article-date">
-  	<time datetime="2019-02-19T14:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/19/Java关键字static/">Java关键字static</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">static</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/17/List去重之Set/" class="archive-article-date">
-  	<time datetime="2019-02-17T14:17:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/17/List去重之Set/">List去重之Set</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">List</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Set</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -392,8 +441,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

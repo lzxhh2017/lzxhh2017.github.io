@@ -16,17 +16,17 @@
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
 <meta property="og:description" content="前言 工厂模式实现了创建者和调用者的分离，实现了更好的解耦。 详细分类：（1）简单工厂模式（2）工厂方式模式（3）抽象工厂模式">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C1.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C2.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C3.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C4.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C5.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C6.jpg">
-<meta property="og:updated_time" content="2019-06-13T15:10:00.405Z">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/1.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/2.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/3.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/4.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/5.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/6.jpg">
+<meta property="og:updated_time" content="2019-06-13T15:25:02.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java设计模式之工厂模式">
 <meta name="twitter:description" content="前言 工厂模式实现了创建者和调用者的分离，实现了更好的解耦。 详细分类：（1）简单工厂模式（2）工厂方式模式（3）抽象工厂模式">
-<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C1.png">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -193,7 +193,7 @@
 <a id="more"></a>
 
 <p>下面将逐一介绍：<br><strong>简单工厂模式</strong><br>以计算器为例，结构图如下所示：</p>
-<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C1.png" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/1.png" alt></p>
 <p>简单工厂类是这样写的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OperationFactory</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Operation <span class="title">createOperate</span><span class="params">(String operate)</span></span>&#123;</span><br><span class="line">        Operation Oper = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">switch</span> (operate)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"+"</span>:</span><br><span class="line">                oper = <span class="keyword">new</span> OperationAdd();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"-"</span>:</span><br><span class="line">                oper = <span class="keyword">new</span> OperationSub();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"*"</span>:</span><br><span class="line">                oper = <span class="keyword">new</span> OperationMul();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"/"</span>:</span><br><span class="line">                oper = <span class="keyword">new</span> OperationDiv();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> oper;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -202,7 +202,7 @@
 
 <p>如果现在需要增加其他运算，比如求M的N次方，或者求M的N次方根，这样复杂性就增加了。因为如果加一个“求M的N次方”的功能，我们一定要给运算工厂类的方法添加“Case”的分支条件，这样即违背了开放-封闭原则（OCP(开闭原则, Open-Closed Principle)：一个软件的实体应当对扩展开放，对修改关闭）。</p>
 <p><strong>工厂方法模式实现</strong><br>结构图如下：</p>
-<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C2.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/2.jpg" alt></p>
 <p>先构建一个工厂接口：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IFactory</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function">Operation <span class="title">CreateOperation</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -213,17 +213,17 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IFactory operFactory ＝ <span class="keyword">new</span> AddFactory();</span><br><span class="line">Operation oper = operFactory.CreateOperation();</span><br><span class="line">oper.NumberA = <span class="number">1</span>;</span><br><span class="line">oper.NumberB = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">double</span> result = oper.GetResult();</span><br></pre></td></tr></table></figure>
 
 <p>工厂方法模式：定义一个用于创建对象的接口，让子类决定实例化哪一个类。<br>工厂方法模式结构图：</p>
-<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C3.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/3.jpg" alt></p>
 <p>根据依赖倒转原则（ DIP(依赖倒转原则,Dependence Inversion Principle)：要针对接口编程，不要针对实现编程），我们把工厂类抽象出一个接口，这个接口只有一个方法，就是创建抽象产品的工厂方法。然后，所有的要生产具体类的工厂，就去实现这个接口，这样，一个简单工厂模式的工厂类，就变成了一个工厂抽象接口和多个具体生成对象的工厂，当我们需要增加新的功能时，就不需要更改原有的工厂类了，只需要增加此功能的运算类和相应的工厂类就可以了。</p>
-<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C4.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/4.jpg" alt></p>
 <p>这样整个工厂和产品体系其实都没有修改的变化，而只是扩展的变化，这就完全符合了开放－封闭原则的精神。</p>
 <p>工厂方法模式实现时，客户端需要决定实例化哪一个工厂来实现运算类，选择判断的问题还是存在的，也就是说，工厂方法把简单工厂的内部逻辑判断移动到了客户端代码来运行。你想要加功能，本来是该工厂类的，而现在是修改客户端。</p>
 <p><strong>抽象工厂模式</strong><br>为创建一组相关或相互依赖的对象提供一个接口，而且无需指定他们的具体类。</p>
-<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C5.png" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/5.png" alt></p>
 <p><strong>抽象工厂模式与工厂方法模式的区别</strong></p>
 <p>抽象工厂模式是工厂方法模式的升级版本，他用来创建一组相关或者相互依赖的对象。他与工厂方法模式的区别就在于，工厂方法模式针对的是一个产品等级结构；而抽象工厂模式则是针对的多个产品等级结构。在编程中，通常一个产品结构，表现为一个接口或者抽象类，也就是说，工厂方法模式提供的所有产品都是衍生自同一个接口或抽象类，而抽象工厂模式所提供的产品则是衍生自不同的接口或抽象类。</p>
 <p>在抽象工厂模式中，有一个产品族的概念：所谓的产品族，是指位于不同产品等级结构中功能相关联的产品组成的家族。抽象工厂模式所提供的一系列产品就组成一个产品族；而工厂方法提供的一系列产品称为一个等级结构。我们依然拿生产汽车的例子来说明他们之间的区别。</p>
-<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%5C6.jpg" alt></p>
+<p><img src="//lzxhh2017.github.io/2019/02/20/Java设计模式之工厂模式/6.jpg" alt></p>
 <p>在上面的类图中，两厢车和三厢车称为两个不同的等级结构；而2.0排量车和2.4排量车则称为两个不同的产品族。再具体一点，2.0排量两厢车和2.4排量两厢车属于同一个等级结构，2.0排量三厢车和2.4排量三厢车属于另一个等级结构；而2.0排量两厢车和2.0排量三厢车属于同一个产品族，2.4排量两厢车和2.4排量三厢车属于另一个产品族。</p>
 <p>明白了等级结构和产品族的概念，就理解工厂方法模式和抽象工厂模式的区别了，如果工厂的产品全部属于同一个等级结构，则属于工厂方法模式；如果工厂的产品来自多个等级结构，则属于抽象工厂模式。在本例中，如果一个工厂模式提供2.0排量两厢车和2.4排量两厢车，那么他属于工厂方法模式；如果一个工厂模式是提供2.4排量两厢车和2.4排量三厢车两个产品，那么这个工厂模式就是抽象工厂模式，因为他提供的产品是分属两个不同的等级结构。当然，如果一个工厂提供全部四种车型的产品，因为产品分属两个等级结构，他当然也属于抽象工厂模式了。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IProduct1</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IProduct2</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product1</span> <span class="keyword">implements</span> <span class="title">IProduct1</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"这是1型产品"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product2</span> <span class="keyword">implements</span> <span class="title">IProduct2</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        System.out.println(<span class="string">"这是2型产品"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IFactory</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> IProduct1 <span class="title">createProduct1</span><span class="params">()</span></span>;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> IProduct2 <span class="title">createProduct2</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Factory</span> <span class="keyword">implements</span> <span class="title">IFactory</span></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> IProduct1 <span class="title">createProduct1</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Product1();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> IProduct2 <span class="title">createProduct2</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Product2();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;  </span><br><span class="line">        IFactory factory = <span class="keyword">new</span> Factory();  </span><br><span class="line">        factory.createProduct1().show();  </span><br><span class="line">        factory.createProduct2().show();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -350,6 +350,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/02/21/Java设计模式之策略模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java设计模式之策略模式
+        
+      </div>
+    </a>
   
   
     <a href="/2019/02/19/Java关键字static/" id="article-nav-older" class="article-nav-link-wrap">
