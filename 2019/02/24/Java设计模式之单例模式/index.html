@@ -6,31 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>Nginx+Tomcat搭建集群环境 | Mr. Liu&#39;s blog</title>
+  <title>Java设计模式之单例模式 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
-<meta name="keywords" content="Nginx,Tomcat">
+  <meta name="description" content="前言 单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx+Tomcat搭建集群环境">
-<meta property="og:url" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/index.html">
+<meta property="og:title" content="Java设计模式之单例模式">
+<meta property="og:url" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
-<meta property="og:description" content="前言 Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
+<meta property="og:description" content="前言 单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/1.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/2.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/3.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/4.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/5.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/6.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/7.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/8.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/9.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/10.png">
-<meta property="og:updated_time" content="2019-06-13T13:15:18.871Z">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/1.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/2.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/3.jpg">
+<meta property="og:updated_time" content="2019-06-13T15:45:15.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx+Tomcat搭建集群环境">
-<meta name="twitter:description" content="前言 Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。">
-<meta name="twitter:image" content="https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/1.jpg">
+<meta name="twitter:title" content="Java设计模式之单例模式">
+<meta name="twitter:description" content="前言 单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -170,20 +163,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Nginx-Tomcat搭建集群环境" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java设计模式之单例模式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Nginx+Tomcat搭建集群环境
+      Java设计模式之单例模式
     </h1>
   
 
         
-        <a href="/2018/12/15/Nginx-Tomcat搭建集群环境/" class="archive-article-date">
-  	<time datetime="2018-12-15T14:38:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-15</time>
+        <a href="/2019/02/24/Java设计模式之单例模式/" class="archive-article-date">
+  	<time datetime="2019-02-24T12:38:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
 </a>
         
       </header>
@@ -192,45 +185,60 @@
       
 	  
         <p><strong>前言</strong></p>
-<p>Nginx结合tomcat进行集群搭建。Nginx不仅仅是一个反向代理服务器，它本身也可以托管网站，作为Web服务器，进行Http服务处理。</p>
+<p>单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。</p>
 <a id="more"></a>
 
-<p><strong>一、Nginx介绍</strong></p>
-<p>Nginx是一款高性能的http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。官方测试nginx能够支支撑5万并发链接，并且cpu、内存等资源消耗却非常低，运行非常稳定。</p>
-<p>应用场景：</p>
-<ul>
-<li>http服务器。Nginx可以独立提供http服务。可以做网页静态服务器。</li>
-<li>虚拟主机。可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。</li>
-<li>反向代理，负载均衡。当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用nginx做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。</li>
+<h4 id="单例模式的几种实现方式"><a href="#单例模式的几种实现方式" class="headerlink" title="单例模式的几种实现方式"></a>单例模式的几种实现方式</h4><ul>
+<li>饿汉模式</li>
+<li>懒汉模式</li>
+<li>双重锁定</li>
+<li>静态内部类</li>
+<li>枚举单例</li>
 </ul>
-<p><strong>二、tomcat集群</strong></p>
+<h3 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h3><blockquote>
+<p>在类加载时就完成了初始化，当单例很大的话，将会浪费很多的内存，所以类加载较慢，但获取对象的速度快。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();<span class="comment">//静态私有成员</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;<span class="comment">//私有构造函数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//静态，不用同步（类加载时已初始化，不会有多线程的问题）</span></span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h3><blockquote>
+<p>在类加载时，不创建实例，因此类加载速度快，但运行时获取对象的速度慢。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;<span class="comment">//静态私有成员,没有初始化</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;<span class="comment">//私有构造函数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试用例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        Singleton s1 = <span class="keyword">new</span> Singleton();</span><br><span class="line">        Singleton s2 = <span class="keyword">new</span> Singleton();</span><br><span class="line">        System.out.println(s1 == s2);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/1.png" alt></p>
+<p>单例模式因为Singleton类封装它的唯一实例，这样它可以严格的控制客户端怎样访问它以及何时访问它，也就是对唯一实例的受控访问。</p>
+<h3 id="多线程中的单例模式"><a href="#多线程中的单例模式" class="headerlink" title="多线程中的单例模式"></a>多线程中的单例模式</h3><blockquote>
+<p>在单线程下这种写法是可以的，但是在多线程下存在线程安全问题。当同一时间有两个或者两个以上线程进入getInstance()方法时，因为刚开始single都是null，几个线程都同时满足if(single==null)这个条件，就会同时new Singleton()这个对象。</p>
+</blockquote>
+<p>测试用例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SingletonThread类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Set&lt;Singleton&gt; set = <span class="keyword">new</span> HashSet&lt;Singleton&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Singleton single = Singleton.getInstance();</span><br><span class="line">        set.add(single);</span><br><span class="line">        System.out.println(<span class="string">"Set的大小为："</span> + set.size() + <span class="string">","</span> + set);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//main函数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        SingletonThread t=<span class="keyword">new</span> SingletonThread();</span><br><span class="line">        <span class="keyword">new</span> Thread(t).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(t).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(t).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(t).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(t).start();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/2.jpg" alt></p>
+<p>那么应该如何优化呢？在高并发情况下，做到线程安全，保证多线程环境下同时访问也不会造成多个实例的出现，我们可以通过加上<strong>synchronized</strong>修饰符解决。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/3.jpg" alt></p>
+<p>上述方式通过为 getInstence() 方法增加 synchronized 关键字，迫使每个线程在进入这个方法前，要先等候别的线程离开该方法，即不会有两个线程可以同时进入此方法执行 new Singleton()，从而保证了单例的有效。但它的致命缺陷是效率太低了，每个线程每次执行 getInstance() 方法获取类的实例时，都会进行同步。而事实上实例创建完成后，同步就变为不必要的开销了，这样做在高并发下必然会拖垮性能。我们继续优化。</p>
+<h3 id="双重锁定"><a href="#双重锁定" class="headerlink" title="双重锁定"></a>双重锁定</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;<span class="comment">//私有构造函数</span></span><br><span class="line">        System.out.println(<span class="string">"生成一个Singleton实例"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 第一重检查锁定</span></span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 同步锁定代码块</span></span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="comment">// 第二重检查锁定</span></span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">// 实例化对象</span></span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当instance不为null的时候，直接返回实例；当instance为null时并且有多个线程调用getInstance方法时，通过第一重判断，然后通过synchronized机制，只有一个线程进入，另外的处于等待，如果不加第二重判断，第一个线程创建了实例，而后面的线程又可以创建新的实例，这样就没有达到单例的效果。<br>从代码中可以看到在修饰instance变量的时候用到了<strong>volatile</strong>修饰符，那么起到了什么作用呢？</p>
 <ul>
-<li>提高服务的性能，例如计算处理能力、并发能力等，以及实现服务的高可用性。</li>
-<li>提供项目架构的横向扩展能力，增加集群中的机器就能提高集群的性能。</li>
+<li><strong>禁止指令重排序</strong>。我们知道new Singleton()是一个非原子操作，编译器可能会重排序【构造函数可能在整个对象初始化完成前执行完毕，即赋值操作（只是在内存中开辟一片存储区域后直接返回内存的引用）在初始化对象前完成】。</li>
+<li><strong>保证可见性</strong>。线程1在自己的工作线程内创建了实例，但此时还未同步到主存中；此时线程2在主存中判断instance还是null，那么线程2又将在自己的工作线程中创建一个实例，这样就创建了多个实例。</li>
 </ul>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/1.jpg" alt></p>
-<p><strong>三、实现步骤</strong></p>
-<p>1、安装Nginx，通过<a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">https://nginx.org/en/download.html</a> 下载，这里用的版本是nginx-1.14.2，下载解压即可。</p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/2.jpg" alt></p>
-<p>2、准备两个tomcat</p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/3.png" alt></p>
-<p>3、分别修改两个tomcat的启动端口，下面以apache-tomcat-7.0.202为例，打开server.xml</p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/4.jpg" alt></p>
-<p>需要修改三处端口号：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Server</span> <span class="attr">port</span>=<span class="string">"8007"</span> <span class="attr">shutdown</span>=<span class="string">"SHUTDOWN"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8081"</span> <span class="attr">protocol</span>=<span class="string">"HTTP/1.1"</span> </span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">            <span class="attr">connectionTimeout</span>=<span class="string">"20000"</span> </span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">              <span class="attr">redirectPort</span>=<span class="string">"8443"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8011"</span> <span class="attr">protocol</span>=<span class="string">"AJP/1.3"</span> <span class="attr">redirectPort</span>=<span class="string">"8443"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h3><blockquote>
+<p>静态内部类比双重检查锁定和在getInstance()方法上加同步都要好，实现了线程安全又避免了同步带来的性能影响。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;<span class="comment">//私有构造函数</span></span><br><span class="line">        System.out.println(<span class="string">"生成一个Singleton实例"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonInner.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonInner</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>4、启动两个tomcat（运行bin文件夹下面的<strong>startup.bat</strong>），然后在浏览器中访问，查看是否启动正常，这里是修改了<strong>/webapps/ROOT</strong>路径下的默认页面index.jsp文件，访问如下图所示：</p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/5.png" alt></p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/6.png" alt></p>
-<p>5、访问正常后，进行配置Nginx来实现负载均衡，打开Nginx文件夹中的<strong>nginx.conf</strong>文件</p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/7.jpg" alt></p>
-<p>核心配置如下</p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/8.jpg" alt></p>
-<p>6、配置完成后，启动Nginx:</p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/9.png" alt></p>
-<p>7、浏览器进行访问localhost查看运行状况。（<strong>upstream</strong>指定了集群服务的各个服务的地址，<strong>weight</strong>来增加某个服务器的权重，也就意味着请求会被多转发到这个服务器上。）</p>
-<p><img src="//lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/10.png" alt></p>
-
+<p>外部类加载时并不需要立即加载内部类，内部类不被加载则不去初始化INSTANCE，故而不占内存。即当SingleTon第一次被加载时，并不需要去加载SingletonInner，只有当getInstance()方法第一次被调用时，才会去初始化INSTANCE,第一次调用getInstance()方法会导致虚拟机加载SingletonInner类，这种方法不仅能确保线程安全，也能保证单例的唯一性，同时也延迟了单例的实例化。</p>
+<h3 id="枚举单例"><a href="#枚举单例" class="headerlink" title="枚举单例"></a>枚举单例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Instance</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Instance <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Singleton.INSTANCE.getInstance();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">enum</span> Singleton &#123;</span><br><span class="line">        INSTANCE;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> Instance instance;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * JVM保证这个方法绝对只调用一次</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        Singleton() &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Instance();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Instance <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> instance;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -269,11 +277,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
@@ -285,7 +289,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Tomcat//" class="article-tag-list-link color2">Tomcat</a>
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -340,7 +344,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2018/12/15/Nginx-Tomcat搭建集群环境/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -354,18 +358,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/24/你想了解的前端知识都在这里/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          你想了解的前端知识都在这里
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/04/Oracle-11g导出空表、少表的解决方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Oracle 11g导出空表、少表的解决方法</div>
+    <a href="/2019/02/21/Java设计模式之策略模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java设计模式之策略模式</div>
       <i class="icon-circle-right"></i>
     </a>
   
