@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>Archives: 2018/11 | Mr. Liu&#39;s blog</title>
+  <title>List去重之Set | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr. Liu&#39;s blog">
-<meta property="og:url" content="https://lzxhh2017.github.io/archives/2018/11/index.html">
+  <meta name="description" content="前言 我们都知道，List集合是允许重复的元素存在的。这里要阐明的List去重是通过将List集合转换成Set。Set是最简单的一种集合，不保存重复的元素，集合中的对象不按特定的方式排序，并且没有重复对象。">
+<meta name="keywords" content="List,Set">
+<meta property="og:type" content="article">
+<meta property="og:title" content="List去重之Set">
+<meta property="og:url" content="https://lzxhh2017.github.io/2019/02/17/List去重之Set/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
+<meta property="og:description" content="前言 我们都知道，List集合是允许重复的元素存在的。这里要阐明的List去重是通过将List集合转换成Set。Set是最简单的一种集合，不保存重复的元素，集合中的对象不按特定的方式排序，并且没有重复对象。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/17/List去重之Set/1.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/17/List去重之Set/2.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/17/List去重之Set/3.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/17/List去重之Set/4.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/17/List去重之Set/5.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/17/List去重之Set/6.png">
+<meta property="og:updated_time" content="2019-06-13T14:29:07.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr. Liu&#39;s blog">
+<meta name="twitter:title" content="List去重之Set">
+<meta name="twitter:description" content="前言 我们都知道，List集合是允许重复的元素存在的。这里要阐明的List去重是通过将List集合转换成Set。Set是最简单的一种集合，不保存重复的元素，集合中的对象不按特定的方式排序，并且没有重复对象。">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/02/17/List去重之Set/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -154,124 +166,223 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-List去重之Set" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/23/Oracle和MySQL递归查询本下级/" class="archive-article-date">
-  	<time datetime="2018-11-23T11:14:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/23/Oracle和MySQL递归查询本下级/">Oracle和MySQL递归查询本下级</a>
+    <h1 class="article-title" itemprop="name">
+      List去重之Set
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/02/17/List去重之Set/" class="archive-article-date">
+  	<time datetime="2019-02-17T14:17:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  
+        <p><strong>前言</strong></p>
+<p>我们都知道，List集合是允许重复的元素存在的。这里要阐明的List去重是通过将List集合转换成Set。Set是最简单的一种集合，不保存重复的元素，集合中的对象不按特定的方式排序，并且没有重复对象。</p>
+<a id="more"></a>
+
+<p>我们新建一个Test类，如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="meta">@SuppressWarnings</span>(&#123; <span class="string">"unchecked"</span>, <span class="string">"rawtypes"</span> &#125;)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		list.add(<span class="number">1</span>);</span><br><span class="line">		list.add(<span class="number">2</span>);</span><br><span class="line">		list.add(<span class="number">3</span>);</span><br><span class="line">		list.add(<span class="number">4</span>);</span><br><span class="line">		list.add(<span class="number">1</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		<span class="comment">//创建一个set集合</span></span><br><span class="line">		Set set = <span class="keyword">new</span> HashSet();</span><br><span class="line">		<span class="comment">//创建一个新的list集合</span></span><br><span class="line">		List newList = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		set.addAll(list);</span><br><span class="line">		newList.addAll(set);</span><br><span class="line">		System.out.println(newList);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/17/List去重之Set/1.png" alt></p>
+<p>从上图可以看出，通过将List集合转化成Set集合，达到了去重的效果。</p>
+<p>但是当list集合中存储的不是元素，而是对象类型的时候，我们还可以简单的把list集合转换成set集合吗？那么我们来验证一下。</p>
+<p>我们先定义一个对象（User）类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> String sex;</span><br><span class="line">	<span class="keyword">private</span> Integer age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getSex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> sex;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSex</span><span class="params">(String sex)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(String name, String sex, Integer age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.sex = sex;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">return</span> <span class="string">"&#123;name="</span> + name + <span class="string">","</span> + <span class="string">"sex="</span> + sex + <span class="string">","</span> + <span class="string">"age="</span> + age + <span class="string">"&#125;"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们使用上面的set去重的方法去重：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		List&lt;User&gt; list = <span class="keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="string">"张三"</span>, <span class="string">"男"</span>, <span class="number">23</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="string">"李四"</span>, <span class="string">"女"</span>, <span class="number">23</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="string">"王五"</span>, <span class="string">"男"</span>, <span class="number">23</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="string">"张三"</span>, <span class="string">"男"</span>, <span class="number">23</span>));</span><br><span class="line">		System.out.println(list.toString());</span><br><span class="line">		Set&lt;User&gt; setList = <span class="keyword">new</span> HashSet&lt;User&gt;();</span><br><span class="line">		setList.addAll(list);</span><br><span class="line">		System.out.println(setList.toString());</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行后输出的结果为：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/17/List去重之Set/2.png" alt></p>
+<p>从上图我们可以看出，出现两个张三，并没有达到去重的效果。</p>
+<p>那么应该如何去重呢？我们都知道HashSet可以用来去重，那么是如何去重的呢？我们看源码可以看出HashSet的去重就是根据HashMap实现的，而HashMap的实现又完全依赖于hashcode和equals方法。</p>
+<p><img src="//lzxhh2017.github.io/2019/02/17/List去重之Set/3.png" alt></p>
+<p>由此我们可以推断出，当list集合中存储的是对象时，我们必须在对象的实体类中重写equals()方法和hashCode()方法，如下面所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		String str = name + sex + age;</span><br><span class="line">		<span class="keyword">return</span> str.hashCode();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		User user = (User) obj;</span><br><span class="line">		<span class="keyword">return</span> name.equals(user.name) &amp;&amp; sex.equals(user.sex)</span><br><span class="line">				&amp;&amp; age.equals(user.age);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在User类中重写这两个方法后，我们再去运行Test1这个类，我们可以发现去重成功了。如下图所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/17/List去重之Set/4.png" alt></p>
+<p>下面我们来看下equals()方法和hashCode()方法的具体实现：</p>
+<p><strong>equals()</strong></p>
+<p><img src="//lzxhh2017.github.io/2019/02/17/List去重之Set/5.png" alt></p>
+<p>从源码中可以看出，两个对象相互比较时，首先会比较地址，如果是同一对象的引用，则判断为对象相等，结果返回true；如果地址不一样，则说明不是引用同一个对象，equals方法则会对两个字符串对象内的字符进行挨个比较，如果完全相等返回true，否则返回false。</p>
+<p><strong>hashCode()</strong></p>
+<p><img src="//lzxhh2017.github.io/2019/02/17/List去重之Set/6.png" alt></p>
+<p>hashCode()是Object中的方法。由于hashCode方法定义在Object类中，所以每个对象都有一个默认的散列码，其值为对象的存储地址。</p>
+<p>当equals方法被重新定义，hashCode方法也要跟着重新定义，以便用户可以将对象插入到散列表中。</p>
+<p>Equals和hashCode的定义必须是一致的：如果a.equals(b)返回true，那么a.hashCode()就必须与b.hashCode()具有相同的值。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">List</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Set</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Oracle//" class="article-tag-list-link color2">Oracle</a>
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/02/17/List去重之Set/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/21/Oracle数据库初始化脚本/" class="archive-article-date">
-  	<time datetime="2018-11-21T12:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/24/你想了解的前端知识都在这里/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你想了解的前端知识都在这里</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/21/Oracle数据库初始化脚本/">Oracle数据库初始化脚本</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Oracle//" class="article-tag-list-link color2">Oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -294,8 +405,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
