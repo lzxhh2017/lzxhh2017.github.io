@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>Tag: Tomcat | Mr. Liu&#39;s blog</title>
+  <title>HTTPS原理详解 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr. Liu&#39;s blog">
-<meta property="og:url" content="https://lzxhh2017.github.io/tags/Tomcat/index.html">
+  <meta name="description" content="前言 HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。">
+<meta name="keywords" content="HTTP,HTTPS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTPS原理详解">
+<meta property="og:url" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
+<meta property="og:description" content="前言 HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/1.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/2.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/3.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/4.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/5.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/6.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/7.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/8.jpg">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/9.jpg">
+<meta property="og:updated_time" content="2019-06-14T01:23:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr. Liu&#39;s blog">
+<meta name="twitter:title" content="HTTPS原理详解">
+<meta name="twitter:description" content="前言 HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -154,75 +169,252 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HTTPS原理详解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/15/Nginx-Tomcat搭建集群环境/" class="archive-article-date">
-  	<time datetime="2018-12-15T14:38:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/15/Nginx-Tomcat搭建集群环境/">Nginx+Tomcat搭建集群环境</a>
+    <h1 class="article-title" itemprop="name">
+      HTTPS原理详解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/02/26/HTTPS原理详解/" class="archive-article-date">
+  	<time datetime="2019-02-26T01:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  
+        <p><strong>前言</strong></p>
+<p>HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。</p>
+<a id="more"></a>
+
+<h3 id="什么是HTTP？"><a href="#什么是HTTP？" class="headerlink" title="什么是HTTP？"></a>什么是HTTP？</h3><p>HTTP 协议（HyperText Transfer Protocol，超文本传输协议）：是客户端浏览器或其他程序与Web服务器之间的应用层通信协议 。</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/1.png" alt></p>
+<h3 id="什么是HTTPS"><a href="#什么是HTTPS" class="headerlink" title="什么是HTTPS?"></a>什么是HTTPS?</h3><p>HTTPS 称为安全的超文本传输协议，在 HTTP 与 TCP 之间增加了一层安全链路 (SSL/TLS)。(SSL 是 TLS 的前身，在 IETF 将 SSL 标准化后就改名叫 TLS，SSL 的最高版本为 3.0，之后版本为 TLS1.0，TLS1.1，TLS1.2…..)。</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/2.png" alt></p>
+<h3 id="为什么要用HTTPS？"><a href="#为什么要用HTTPS？" class="headerlink" title="为什么要用HTTPS？"></a>为什么要用HTTPS？</h3><p>下面来讲个故事，想必我们在学校里面都传过纸条，比如：<br>小明给小花写了一个纸条：”小花，我喜欢你，你喜欢我吗？“；<br>然后小明让小王传给小花，小王如果偷窥纸条的内容，看到了写给小花的内容，偏偏小王又喜欢小花，就不想把纸条传给小花，于是小王把纸条给截下，写了个纸条过去：”我是小王，你长得不好看，哈哈！“；本来是一件很美好的事情，然而被小王这样一捣乱，好事却变成了一桩坏事。</p>
+<blockquote>
+<p>(1)、使用https协议可认证用户和服务器，确保数据发送到正确的客户机和服务器;<br>(2)、https协议是由SSL+http协议构建的可进行加密传输、身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。<br>(3)、https是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。</p>
+</blockquote>
+<h3 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h3><h4 id="HTTP访问过程"><a href="#HTTP访问过程" class="headerlink" title="HTTP访问过程"></a>HTTP访问过程</h4><p>HTTP请求过程中，客户端与服务器之间没有任何身份确认的过程，数据全部明文传输，“裸奔”在互联网上，所以很容易遭到黑客的攻击，如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/3.jpg" alt></p>
+<p>可以看到，客户端发出的请求很容易被黑客截获，如果此时黑客冒充服务器，则其可返回任意信息给客户端，而不被客户端察觉，所以我们经常会听到一词“劫持”。</p>
+<p>下面两图中，浏览器中填入的是相同的URL，左边是正确响应，而右边则是被劫持后的响应，现象如下：</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/4.jpg" alt></p>
+<p>所以HTTP面临以下风险：</p>
+<ul>
+<li>窃听风险。由于是明文传输，如果网络传输的某个节点被动了手脚，那么传输的内容就可被窃听。</li>
+<li>篡改风险。由于是明文传输，在内容被窃听的同时，攻击者可以很容易的篡改传输内容，而HTTP本身没有校验报文完整性的能力。</li>
+<li>冒充风险。无法验证通讯方的真实身份。</li>
+</ul>
+<h3 id="HTTP-向-HTTPS-演化的过程"><a href="#HTTP-向-HTTPS-演化的过程" class="headerlink" title="HTTP 向 HTTPS 演化的过程"></a>HTTP 向 HTTPS 演化的过程</h3><p>一、为了防止上述现象的发生，对传输的信息加密（即使黑客截获，也无法破解）</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/5.jpg" alt></p>
+<p>如上图所示，此种方式属于对称加密，双方拥有相同的密钥，信息得到安全传输，但此种方式的缺点是：</p>
+<ul>
+<li>不同的客户端、服务器数量庞大，所以双方都需要维护大量的密钥，维护成本很高；</li>
+<li>因每个客户端、服务器的安全级别不同，密钥极易泄露。</li>
+</ul>
+<p>二、既然使用对称加密时，密钥维护这么繁琐，那我们就用非对称加密</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/6.jpg" alt></p>
+<p>如上图所示，客户端用公钥对请求内容加密，服务器使用私钥对内容解密，反之亦然，但上述过程也存在缺点：<br>公钥是公开的（也就是黑客也会有公钥），所以第 ④ 步私钥加密的信息，如果被黑客截获，其可以使用公钥进行解密，获取其中的内容。</p>
+<p>三、非对称加密既然也有缺陷，那我们就将对称加密，非对称加密两者结合起来，取其精华、去其糟粕，发挥两者的各自的优势</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/7.jpg" alt></p>
+<p>如上图所示<br>（1）第 ③ 步时，客户端说：（咱们后续回话采用对称加密吧，这是对称加密的算法和对称密钥）这段话用公钥进行加密，然后传给服务器；</p>
+<p>（2）服务器收到信息后，用私钥解密，提取出对称加密算法和对称密钥后，服务器说：（好的）对称密钥加密；</p>
+<p>（3）后续两者之间信息的传输就可以使用对称加密的方式了。</p>
+<p>遇到的问题：<br>（1）客户端如何获得公钥；</p>
+<p>（2）如何确认服务器是真实的而不是黑客。</p>
+<p>四、获取公钥与确认服务器身份</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/8.jpg" alt></p>
+<p>1、获取公钥<br>（1）提供一个下载公钥的地址，回话前让客户端去下载。（缺点：下载地址有可能是假的；客户端每次在回话前都先去下载公钥也很麻烦）；</p>
+<p>（2）回话开始时，服务器把公钥发给客户端（缺点：黑客冒充服务器，发送给客户端假的公钥）。</p>
+<p>2、那有没有一种方式既可以安全的获取公钥，又能防止黑客冒充呢？ 那就需要用到SSL 证书（用JDK自带的keytool工具生成或者申购）。</p>
+<p><img src="//lzxhh2017.github.io/2019/02/26/HTTPS原理详解/9.jpg" alt></p>
+<p>如上图所示，在第 ② 步时服务器发送了一个SSL证书给客户端，SSL 证书中包含的主要内容有：</p>
+<p>（1）证书的发布机构CA</p>
+<p>（2）证书的有效期</p>
+<p>（3）公钥</p>
+<p>（4）证书所有者</p>
+<p>（5）签名</p>
+<p>3、客户端在接受到服务端发来的SSL证书时，会对证书的真伪进行校验，以浏览器为例说明如下：<br>（1）首先浏览器读取证书中的证书所有者、有效期等信息进行一一校验；</p>
+<p>（2）浏览器开始查找操作系统中已内置的受信任的证书发布机构CA，与服务器发来的证书中的颁发者CA比对，用于校验证书是否为合法机构颁发；</p>
+<p>（3）如果找不到，浏览器就会报错，说明服务器发来的证书是不可信任的；</p>
+<p>（4）如果找到，那么浏览器就会从操作系统中取出颁发者CA的公钥，然后对服务器发来的证书里面的签名进行解密；</p>
+<p>（5）浏览器使用相同的hash算法计算出服务器发来的证书的hash值，将这个计算的hash值与证书中签名做对比；</p>
+<p>（6）对比结果一致，则证明服务器发来的证书合法，没有被冒充；</p>
+<p>（7）此时浏览器就可以读取证书中的公钥，用于后续加密了。</p>
+<p>4、所以通过发送SSL证书的形式，既解决了公钥获取问题，又解决了黑客冒充问题，一箭双雕，HTTPS加密过程也就此形成。</p>
+<p>所以相比HTTP，HTTPS传输更加安全</p>
+<p>（1） 所有信息都是加密传播，黑客无法窃听。</p>
+<p>（2） 具有校验机制，一旦被篡改，通信双方会立刻发现。</p>
+<p>（3） 配备身份证书，防止身份被冒充。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>综上所述，相比 HTTP 协议，HTTPS 协议增加了很多握手、加密解密等流程，虽然过程很复杂，但其可以保证数据传输的安全。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Tomcat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTTPS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Tomcat//" class="article-tag-list-link color2">Tomcat</a>
+        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/02/26/HTTPS原理详解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/02/24/Java设计模式之单例模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java设计模式之单例模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -245,9 +437,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
