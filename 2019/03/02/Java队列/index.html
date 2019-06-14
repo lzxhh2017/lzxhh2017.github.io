@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>Tag: static | Mr. Liu&#39;s blog</title>
+  <title>Java队列 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr. Liu&#39;s blog">
-<meta property="og:url" content="https://lzxhh2017.github.io/tags/static/index.html">
+  <meta name="description" content="前言 在我们现实生活中，大家经常都会遇到排队的事情。比如说我们排队取火车票，排队取快餐，排队办理银行业务等诸多这样的事情，这些事情都遵从一个原则，谁站在前面，谁就能先拿到东西，拿到东西后就可以离开，而后面的人要获取东西，则必须从最后一个进行排队。">
+<meta name="keywords" content="Queue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java队列">
+<meta property="og:url" content="https://lzxhh2017.github.io/2019/03/02/Java队列/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
+<meta property="og:description" content="前言 在我们现实生活中，大家经常都会遇到排队的事情。比如说我们排队取火车票，排队取快餐，排队办理银行业务等诸多这样的事情，这些事情都遵从一个原则，谁站在前面，谁就能先拿到东西，拿到东西后就可以离开，而后面的人要获取东西，则必须从最后一个进行排队。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/03/02/Java队列/1.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/03/02/Java队列/2.png">
+<meta property="og:updated_time" content="2019-06-14T11:51:24.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr. Liu&#39;s blog">
+<meta name="twitter:title" content="Java队列">
+<meta name="twitter:description" content="前言 在我们现实生活中，大家经常都会遇到排队的事情。比如说我们排队取火车票，排队取快餐，排队办理银行业务等诸多这样的事情，这些事情都遵从一个原则，谁站在前面，谁就能先拿到东西，拿到东西后就可以离开，而后面的人要获取东西，则必须从最后一个进行排队。">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/03/02/Java队列/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -154,48 +162,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java队列" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/19/Java关键字static/" class="archive-article-date">
-  	<time datetime="2019-02-19T14:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/19/Java关键字static/">Java关键字static</a>
+    <h1 class="article-title" itemprop="name">
+      Java队列
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/03/02/Java队列/" class="archive-article-date">
+  	<time datetime="2019-03-02T11:47:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  
+        <p><strong>前言</strong></p>
+<p>在我们现实生活中，大家经常都会遇到排队的事情。比如说我们排队取火车票，排队取快餐，排队办理银行业务等诸多这样的事情，这些事情都遵从一个原则，谁站在前面，谁就能先拿到东西，拿到东西后就可以离开，而后面的人要获取东西，则必须从最后一个进行排队。</p>
+<a id="more"></a>
+
+<h3 id="什么是Queue？"><a href="#什么是Queue？" class="headerlink" title="什么是Queue？"></a>什么是Queue？</h3><p>队列是先进先出（FIFO）数据结构，尾部添加、头部删除（先进队列的元素先出队列），在Queue后面添加元素的过程称为Enqueue，从队列前面删除元素的过程称为Dequeue。跟我们生活中的排队类似。如下图所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/03/02/Java队列/1.png" alt></p>
+<p>首先，Queue继承自Collection，它也是集合家族的一员。Queue接口主要提供了以下方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将指定的元素插入此队列，当队列已满，会抛出IllegalStateException异常</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>;</span><br><span class="line"><span class="comment">//将指定的元素插入此队列，容量限制队列时，通常使用此方法，当队列已满，则返回false</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span></span>;</span><br><span class="line"><span class="comment">//检索并删除此队列的头部，当队列为空时，会抛出NoSuchElementException异常</span></span><br><span class="line"><span class="function">E <span class="title">remove</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//检索并删除此队列的头部，当队列为空时，返回null</span></span><br><span class="line"><span class="function">E <span class="title">poll</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//检索但不删除此队列的头部，当队列为空时，会抛出NoSuchElementException异常</span></span><br><span class="line"><span class="function">E <span class="title">element</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//检索但不删除此队列的头部，当队列为空时，返回null</span></span><br><span class="line"><span class="function">E <span class="title">peek</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">抛出异常</th>
+<th align="left">返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">插入</td>
+<td align="left">add(e)</td>
+<td align="left">offer(e)</td>
+</tr>
+<tr>
+<td align="left">删除</td>
+<td align="left">remove()</td>
+<td align="left">poll()</td>
+</tr>
+<tr>
+<td align="left">检索</td>
+<td align="left">element()</td>
+<td align="left">peek()</td>
+</tr>
+</tbody></table>
+<p>测试用例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Queue&lt;String&gt; queue = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        queue.add(<span class="string">"元素A"</span>);</span><br><span class="line">        queue.add(<span class="string">"元素B"</span>);</span><br><span class="line">        queue.add(<span class="string">"元素C"</span>);</span><br><span class="line">        System.out.println(queue);</span><br><span class="line">        Queue&lt;String&gt; queue1 = <span class="keyword">new</span> LinkedList();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            queue1.element();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (NoSuchElementException elementException)&#123;</span><br><span class="line">            System.out.println(<span class="string">"抛出NoSuchElementException异常"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            queue1.remove();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (NoSuchElementException elementException)&#123;</span><br><span class="line">            System.out.println(<span class="string">"抛出NoSuchElementException异常"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：</p>
+<p><img src="//lzxhh2017.github.io/2019/03/02/Java队列/2.png" alt></p>
+<p>从上图中可以看到，queue是一个先进先出的队列，当队列为空时，会抛出异常。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">static</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Queue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -208,17 +280,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/03/02/Java队列/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/03/01/Java中Random类和ThreadLocalRandom类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中Random类和ThreadLocalRandom类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -241,9 +400,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

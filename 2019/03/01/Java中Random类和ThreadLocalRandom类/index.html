@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>Tag: static | Mr. Liu&#39;s blog</title>
+  <title>Java中Random类和ThreadLocalRandom类 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr. Liu&#39;s blog">
-<meta property="og:url" content="https://lzxhh2017.github.io/tags/static/index.html">
+  <meta name="description" content="前言 在Java中只要一提到随机数，很多人就会想到Random类，如果有生成随机数的需求的时候，大多数时候我们都会选择使用Random来进行随机数生成。那么我们经常使用的随机数生成器Random类的原理是什么？及其局限性是什么？">
+<meta name="keywords" content="Random,ThreadLocalRandom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中Random类和ThreadLocalRandom类">
+<meta property="og:url" content="https://lzxhh2017.github.io/2019/03/01/Java中Random类和ThreadLocalRandom类/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
+<meta property="og:description" content="前言 在Java中只要一提到随机数，很多人就会想到Random类，如果有生成随机数的需求的时候，大多数时候我们都会选择使用Random来进行随机数生成。那么我们经常使用的随机数生成器Random类的原理是什么？及其局限性是什么？">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/03/01/Java中Random类和ThreadLocalRandom类/1.png">
+<meta property="og:image" content="https://lzxhh2017.github.io/2019/03/01/Java中Random类和ThreadLocalRandom类/2.png">
+<meta property="og:updated_time" content="2019-06-14T11:48:09.985Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mr. Liu&#39;s blog">
+<meta name="twitter:title" content="Java中Random类和ThreadLocalRandom类">
+<meta name="twitter:description" content="前言 在Java中只要一提到随机数，很多人就会想到Random类，如果有生成随机数的需求的时候，大多数时候我们都会选择使用Random来进行随机数生成。那么我们经常使用的随机数生成器Random类的原理是什么？及其局限性是什么？">
+<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/03/01/Java中Random类和ThreadLocalRandom类/1.png">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -154,48 +162,124 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java中Random类和ThreadLocalRandom类" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/19/Java关键字static/" class="archive-article-date">
-  	<time datetime="2019-02-19T14:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/19/Java关键字static/">Java关键字static</a>
+    <h1 class="article-title" itemprop="name">
+      Java中Random类和ThreadLocalRandom类
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/03/01/Java中Random类和ThreadLocalRandom类/" class="archive-article-date">
+  	<time datetime="2019-03-01T02:41:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	  
+        <p><strong>前言</strong></p>
+<p>在Java中只要一提到随机数，很多人就会想到Random类，如果有生成随机数的需求的时候，大多数时候我们都会选择使用Random来进行随机数生成。那么我们经常使用的随机数生成器Random类的原理是什么？及其局限性是什么？</p>
+<a id="more"></a>
+
+<h3 id="Random类的定义"><a href="#Random类的定义" class="headerlink" title="Random类的定义"></a>Random类的定义</h3><blockquote>
+<p>Random类位于java.util包中，主要用于生成伪随机数；<br>Random类将种子数作为随机算法的起源数字，计算生成伪随机数，其与生成的随机数字的区间无关；<br>创建Random实例时，若没有指定种子数，则会以当前时间作为种子数，来计算生成伪随机数；<br>拥有相同种子的Random实例，在相同次数下，生成的伪随机数完全相同。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        Random random1 = <span class="keyword">new</span> Random(<span class="number">10</span>);</span><br><span class="line">        Random random2 = <span class="keyword">new</span> Random(<span class="number">10</span>);</span><br><span class="line">        System.out.println(random1.nextInt());</span><br><span class="line">        System.out.println(random2.nextInt());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/03/01/Java中Random类和ThreadLocalRandom类/1.png" alt></p>
+<h3 id="Random原理"><a href="#Random原理" class="headerlink" title="Random原理"></a>Random原理</h3><p>我们先来看一下Random()的构造方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Random</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(seedUniquifier() ^ System.nanoTime());</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Random</span><span class="params">(<span class="keyword">long</span> seed)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (getClass() == Random.class)</span><br><span class="line">            <span class="keyword">this</span>.seed = <span class="keyword">new</span> AtomicLong(initialScramble(seed));</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// subclass might have overriden setSeed</span></span><br><span class="line">            <span class="keyword">this</span>.seed = <span class="keyword">new</span> AtomicLong();</span><br><span class="line">            setSeed(seed);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">seedUniquifier</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// L'Ecuyer, "Tables of Linear Congruential Generators of</span></span><br><span class="line">        <span class="comment">// Different Sizes and Good Lattice Structure", 1999</span></span><br><span class="line">        <span class="keyword">for</span> (;;) &#123;</span><br><span class="line">            <span class="keyword">long</span> current = seedUniquifier.get();</span><br><span class="line">            <span class="keyword">long</span> next = current * <span class="number">181783497276652981L</span>;</span><br><span class="line">            <span class="keyword">if</span> (seedUniquifier.compareAndSet(current, next))</span><br><span class="line">                <span class="keyword">return</span> next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上述源码中可以看出，在无参的构造方法，里面根据当前时间帮我们自动产生了一个种子，并通过CAS自旋方式保证，每次获取的种子不一样，从而保证每次new Random()获取的随机序列不一致。</p>
+<p>当传入一个种子（有参数），来生成随机数，通过上面的例子发现，种子一样产生的随机数序列一样，如果每次使用想产生不一样的序列，那就只能每次传入一个不一样的种子。接着我们来看一下nextInt()函数：</p>
+<h4 id="nextInt"><a href="#nextInt" class="headerlink" title="nextInt()"></a>nextInt()</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nextInt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> next(<span class="number">32</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">next</span><span class="params">(<span class="keyword">int</span> bits)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> oldseed, nextseed;</span><br><span class="line">        <span class="comment">//这里用到了concurrent 包中的原子Long</span></span><br><span class="line">        AtomicLong seed = <span class="keyword">this</span>.seed;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            oldseed = seed.get();</span><br><span class="line">            nextseed = (oldseed * multiplier + addend) &amp; mask;</span><br><span class="line">        &#125; <span class="keyword">while</span> (!seed.compareAndSet(oldseed, nextseed));</span><br><span class="line">        <span class="comment">//这里就是经典的CAS的Java实现</span></span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)(nextseed &gt;&gt;&gt; (<span class="number">48</span> - bits));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上述代码中可以看出nextInt()里面直接调用的是next()方法，传入的32，这里的32指的是Int的位数。这里会根据seed当前的值，通过一定的规则(伪随机)算出下一个seed，然后进行cas，如果cas失败继续循环上面的操作。最后根据我们需要的bit位数来进行返回。如果种子确定后，每次产生的数，都是采用固定的算法进行产生的，所以只要种子确定后，每次产生的序列就是固定的。</p>
+<h4 id="nextInt-int-bound"><a href="#nextInt-int-bound" class="headerlink" title="nextInt(int bound)"></a>nextInt(int bound)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">nextInt</span><span class="params">(<span class="keyword">int</span> bound)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (bound &lt;= <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(BadBound);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> r = next(<span class="number">31</span>);</span><br><span class="line">        <span class="keyword">int</span> m = bound - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> ((bound &amp; m) == <span class="number">0</span>)  <span class="comment">// i.e., bound is a power of 2</span></span><br><span class="line">            r = (<span class="keyword">int</span>)((bound * (<span class="keyword">long</span>)r) &gt;&gt; <span class="number">31</span>);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> u = r;</span><br><span class="line">                 u - (r = u % bound) + m &lt; <span class="number">0</span>;</span><br><span class="line">                 u = next(<span class="number">31</span>))</span><br><span class="line">                ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>具体步骤如下：</p>
+<p>1、首先获取31位的随机数，注意这里是31位，和上面32位不同，因为在nextInt()方法中可以获取到负数的随机数，而nextInt(int bound)规定只能获取到[0,bound)之前的随机数，也就是必须是正数，而int的第一位是符号位所以只获取了31位。</p>
+<p>2、然后进行取bound操作。</p>
+<p>3、如果bound是2的幂，那么直接将第一步获取的数据乘以bound然后右移31位，解释一下:如果bound是4那么,如果乘以4其实就是左移2位，那么其实就是变成了33位，那么再右移31位的话，就又会变成2位，那么2位的int的大小范围其实就是[0,4)了。</p>
+<p>4、如果不是2的幂，通过取余的操作进行处理。</p>
+<h4 id="Random性能问题"><a href="#Random性能问题" class="headerlink" title="Random性能问题"></a>Random性能问题</h4><p>从 Random 源码中我们发现，每次获取随机数的时候都是使用CAS的方式进行更新种子的值。这样在高并发的环境中会存在大量的CAS重试，导致性能下降。</p>
+<h3 id="ThreadLocalRandom"><a href="#ThreadLocalRandom" class="headerlink" title="ThreadLocalRandom"></a>ThreadLocalRandom</h3><blockquote>
+<p>ThreadLocalRandom类是JDK7在JUC包下新增的随机数生成器，它解决了Random类在多线程下多个线程竞争内部唯一的原子性种子变量而导致大量线程自旋重试的不足。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//获取一个随机数生成器</span></span><br><span class="line">        ThreadLocalRandom random = ThreadLocalRandom.current();</span><br><span class="line">        <span class="comment">//输出10个在0-10（包含0，不包含10，左闭右开）之间的随机数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            System.out.println(random.nextInt(<span class="number">10</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上述代码可以看出调用ThreadLocalRandom.current()来获取当前线程的随机数生成器。接着来看下current()方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ThreadLocalRandom <span class="title">current</span><span class="params">()</span> </span>&#123;</span><br><span class="line">         <span class="comment">//判断是否初始化</span></span><br><span class="line">        <span class="keyword">if</span> (UNSAFE.getInt(Thread.currentThread(), PROBE) == <span class="number">0</span>)</span><br><span class="line">            localInit();<span class="comment">//进行初始化操作</span></span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">localInit</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> p = probeGenerator.addAndGet(PROBE_INCREMENT);</span><br><span class="line">        <span class="keyword">int</span> probe = (p == <span class="number">0</span>) ? <span class="number">1</span> : p; <span class="comment">// skip 0</span></span><br><span class="line">        <span class="keyword">long</span> seed = mix64(seeder.getAndAdd(SEEDER_INCREMENT));</span><br><span class="line">        Thread t = Thread.currentThread();</span><br><span class="line">        UNSAFE.putLong(t, SEED, seed);</span><br><span class="line">        UNSAFE.putInt(t, PROBE, probe);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>从上述代码可以看见如果没有初始化会对其进行初始化，而这里我们的seed不再是一个全局变量，在我们的Thread中有三个变量:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** The current seed for a ThreadLocalRandom */</span></span><br><span class="line">    <span class="meta">@sun</span>.misc.Contended(<span class="string">"tlr"</span>)</span><br><span class="line">    <span class="keyword">long</span> threadLocalRandomSeed;<span class="comment">//用来控制随机数的种子</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Probe hash value; nonzero if threadLocalRandomSeed initialized */</span></span><br><span class="line">    <span class="meta">@sun</span>.misc.Contended(<span class="string">"tlr"</span>)</span><br><span class="line">    <span class="keyword">int</span> threadLocalRandomProbe;<span class="comment">//用来控制初始化</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Secondary seed isolated from public ThreadLocalRandom sequence */</span></span><br><span class="line">    <span class="meta">@sun</span>.misc.Contended(<span class="string">"tlr"</span>)</span><br><span class="line">    <span class="keyword">int</span> threadLocalRandomSecondarySeed;<span class="comment">//二级种子</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看见所有的变量都加了@sun.misc.Contended这个注解，这个是用来处理伪共享的问题。</p>
+<h4 id="nextInt-方法"><a href="#nextInt-方法" class="headerlink" title="nextInt()方法"></a>nextInt()方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">next</span><span class="params">(<span class="keyword">int</span> bits)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)(mix64(nextSeed()) &gt;&gt;&gt; (<span class="number">64</span> - bits));</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">final</span> <span class="keyword">long</span> <span class="title">nextSeed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Thread t; <span class="keyword">long</span> r; <span class="comment">// read and update per-thread seed</span></span><br><span class="line">        UNSAFE.putLong(t = Thread.currentThread(), SEED,</span><br><span class="line">                       r = UNSAFE.getLong(t, SEED) + GAMMA);</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如上代码首先使用 r = UNSAFE.getLong(t, SEED)获取当前线程中threadLocalRandomSeed变量的值，然后在种子的基础上累加GAMMA值作为新种子，然后使用UNSAFE的putLong方法把新种子放入当前线程的threadLocalRandomSeed变量。</p>
+<h4 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Random random = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> N = <span class="number">100000</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Random from java.util.concurrent.</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TLRandom</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">                x += ThreadLocalRandom.current().nextInt();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Random from java.util</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">URandom</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">                x += random.nextInt();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"threadNum,Random,ThreadLocalRandom"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> threadNum = <span class="number">50</span>; threadNum &lt;= <span class="number">2000</span>; threadNum += <span class="number">50</span>) &#123;</span><br><span class="line">            ExecutorService poolR = Executors.newFixedThreadPool(threadNum);</span><br><span class="line">            <span class="keyword">long</span> RStartTime = System.currentTimeMillis();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; threadNum; i++) &#123;</span><br><span class="line">                poolR.execute(<span class="keyword">new</span> URandom());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                poolR.shutdown();</span><br><span class="line">                poolR.awaitTermination(<span class="number">100</span>, TimeUnit.SECONDS);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            String str = <span class="string">""</span> + threadNum + <span class="string">","</span> + (System.currentTimeMillis() - RStartTime) + <span class="string">","</span>;</span><br><span class="line"></span><br><span class="line">            ExecutorService poolTLR = Executors.newFixedThreadPool(threadNum);</span><br><span class="line">            <span class="keyword">long</span> TLRStartTime = System.currentTimeMillis();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; threadNum; i++) &#123;</span><br><span class="line">                poolTLR.execute(<span class="keyword">new</span> TLRandom());</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                poolTLR.shutdown();</span><br><span class="line">                poolTLR.awaitTermination(<span class="number">100</span>, TimeUnit.SECONDS);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(str + (System.currentTimeMillis() - TLRStartTime));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下所示：</p>
+<p><img src="//lzxhh2017.github.io/2019/03/01/Java中Random类和ThreadLocalRandom类/2.png" alt></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>ThreadLocalRandom使用ThreadLocal的原理，让每个线程内持有一个本地的种子变量，该种子变量只有在使用随机数时候才会被初始化，多线程下计算新种子时候是根据自己线程内维护的种子变量进行更新，从而避免了竞争。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">static</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Random</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ThreadLocalRandom</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -208,17 +292,113 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/03/01/Java中Random类和ThreadLocalRandom类/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/03/02/Java队列/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java队列
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/02/27/设计模式优化if-else语句/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式优化if-else语句</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -241,9 +421,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
