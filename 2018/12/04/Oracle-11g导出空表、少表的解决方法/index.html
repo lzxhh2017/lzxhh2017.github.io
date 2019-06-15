@@ -182,6 +182,10 @@
     <div class="article-entry" itemprop="articleBody">
       
 	  
+
+	
+
+
         <p><strong>前言</strong></p>
 <p>Oracle11g有个新特性，这个新特性 “deferred_segment_creation” 含义是段延迟创建，默认是true。如果这个参数设置为true，你新创建了一个Table，并且没有向其中插入数据，那么这个表不会立即分配extend，也就是不占数据空间，即表不分配segment以节省空间，所以这些表也没能导出来。在系统表user_tables中也可以看到segment_treated的字段里是“NO”或者“YES”说明了某张表是否分配了segment。说白了是为了可以节省少量的空间。</p>
 <a id="more"></a>
@@ -456,11 +460,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">static</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color2">static</a>
               </li>
              
               <li class="article-tag-list-item">
