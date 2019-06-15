@@ -9,7 +9,7 @@
   <title>Java设计模式之单例模式 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言 单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。">
-<meta name="keywords" content="设计模式">
+<meta name="keywords" content="单例模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java设计模式之单例模式">
 <meta property="og:url" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/index.html">
@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/1.png">
 <meta property="og:image" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/2.jpg">
 <meta property="og:image" content="https://lzxhh2017.github.io/2019/02/24/Java设计模式之单例模式/3.jpg">
-<meta property="og:updated_time" content="2019-06-13T15:45:15.729Z">
+<meta property="og:updated_time" content="2019-06-15T05:30:22.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java设计模式之单例模式">
 <meta name="twitter:description" content="前言 单例模式确保某个类只有一个实例，而且自行实例化并向整个系统提供这个实例。在计算机系统中，线程池、缓存、日志对象、对话框、打印机、显卡的驱动程序对象常被设计成单例。">
@@ -63,6 +63,8 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 				<li><a href="/tags">标签云</a></li>
 	        
@@ -120,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -138,11 +142,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags">标签云</a></li>
+					<li style="width: 25%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
+					<li style="width: 25%"><a href="/tags">标签云</a></li>
+		        
+					<li style="width: 25%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -275,7 +281,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单例模式</a>
         		</li>
       		
 		</ul>
@@ -287,7 +293,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
+        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/后端/设计模式//" class="article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
@@ -485,19 +495,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">static</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">单例模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">List</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Set</a>
+                <a href="javascript:void(0)" class="js-tag color5">代理模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,11 +519,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ngint</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +535,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">if-else</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+                <a href="javascript:void(0)" class="js-tag color5">List</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Set</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">集合</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,11 +559,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">策略模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工厂模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
             
             <div class="clearfix"></div>

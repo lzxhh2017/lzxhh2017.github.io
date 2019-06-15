@@ -56,6 +56,8 @@
 			
 				<li><a href="/">主页</a></li>
 	        
+				<li><a href="/categories">分类</a></li>
+	        
 				<li><a href="/tags">标签云</a></li>
 	        
 				<li><a href="/archives">归档</a></li>
@@ -112,6 +114,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -130,11 +134,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags">标签云</a></li>
+					<li style="width: 25%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
+					<li style="width: 25%"><a href="/tags">标签云</a></li>
+		        
+					<li style="width: 25%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -181,8 +187,8 @@
 
   
   <div class="category-all-page">
-    <h2>共计&nbsp;4&nbsp;个分类</h2>
-    <ul class="category-list-item-list"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/Java/">Java</a><span class="category-list-item-list-count">10</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/Oracle/">Oracle</a><span class="category-list-item-list-count">3</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/Tomcat/">Tomcat</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/前端/">前端</a><span class="category-list-item-list-count">1</span></li></ul>
+    <h2>共计&nbsp;7&nbsp;个分类</h2>
+    <ul class="category-list-item-list"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/前端/">前端</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/后端/">后端</a><span class="category-list-item-list-count">11</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/后端/Java/">Java</a><span class="category-list-item-list-count">5</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/后端/Tomcat/">Tomcat</a><span class="category-list-item-list-count">1</span></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/后端/设计模式/">设计模式</a><span class="category-list-item-list-count">5</span></li></ul></li><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/数据库/">数据库</a><span class="category-list-item-list-count">3</span><ul class="category-list-item-list-child"><li class="category-list-item-list-item"><a class="category-list-item-list-link" href="/categories/数据库/Oracle/">Oracle</a><span class="category-list-item-list-count">3</span></li></ul></li></ul>
   </div>
   
 
@@ -442,19 +448,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">static</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">单例模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">List</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Set</a>
+                <a href="javascript:void(0)" class="js-tag color5">代理模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,11 +472,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color1">Ngint</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +488,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+                <a href="javascript:void(0)" class="js-tag color3">if-else</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+                <a href="javascript:void(0)" class="js-tag color5">List</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Set</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">集合</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,11 +512,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color5">策略模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工厂模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
             
             <div class="clearfix"></div>
