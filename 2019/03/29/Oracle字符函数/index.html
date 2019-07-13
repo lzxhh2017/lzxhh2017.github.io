@@ -6,25 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://lzxhh2017.github.io">
-  <title>强引用、软引用、弱引用和幻象引用的区别 | Mr. Liu&#39;s blog</title>
+  <title>Oracle字符函数 | Mr. Liu&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言 在java语言中，除了原始数据类型（boolean、byte、short、char、int、float、double、long）的变量，其他所有都是所谓的引用类型，指向各种不同的对象。">
-<meta name="keywords" content="强引用,软引用,弱引用,幻象引用">
+  <meta name="description" content="前言 Oracle函数包含ASCII()、CHR()、CONCAT()、INITCAP()、INSTR()、LENGTH()、LOWER()、UPPER()、RPAD()、LPAD()、LTRIM() 、RTRIM() 、TRIM()、SUBSTR()、REPLACE()。">
+<meta name="keywords" content="Oracle">
 <meta property="og:type" content="article">
-<meta property="og:title" content="强引用、软引用、弱引用和幻象引用的区别">
-<meta property="og:url" content="https://lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/index.html">
+<meta property="og:title" content="Oracle字符函数">
+<meta property="og:url" content="https://lzxhh2017.github.io/2019/03/29/Oracle字符函数/index.html">
 <meta property="og:site_name" content="Mr. Liu&#39;s blog">
-<meta property="og:description" content="前言 在java语言中，除了原始数据类型（boolean、byte、short、char、int、float、double、long）的变量，其他所有都是所谓的引用类型，指向各种不同的对象。">
+<meta property="og:description" content="前言 Oracle函数包含ASCII()、CHR()、CONCAT()、INITCAP()、INSTR()、LENGTH()、LOWER()、UPPER()、RPAD()、LPAD()、LTRIM() 、RTRIM() 、TRIM()、SUBSTR()、REPLACE()。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/1.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/2.jpg">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/3.png">
-<meta property="og:image" content="https://lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/4.png">
-<meta property="og:updated_time" content="2019-06-18T12:25:51.122Z">
+<meta property="og:updated_time" content="2019-07-13T04:48:16.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="强引用、软引用、弱引用和幻象引用的区别">
-<meta name="twitter:description" content="前言 在java语言中，除了原始数据类型（boolean、byte、short、char、int、float、double、long）的变量，其他所有都是所谓的引用类型，指向各种不同的对象。">
-<meta name="twitter:image" content="https://lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/1.png">
+<meta name="twitter:title" content="Oracle字符函数">
+<meta name="twitter:description" content="前言 Oracle函数包含ASCII()、CHR()、CONCAT()、INITCAP()、INSTR()、LENGTH()、LOWER()、UPPER()、RPAD()、LPAD()、LTRIM() 、RTRIM() 、TRIM()、SUBSTR()、REPLACE()。">
   
     <link rel="alternative" href="/atom.xml" title="Mr. Liu&#39;s blog" type="application/atom+xml">
   
@@ -164,20 +159,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-强引用、软引用、弱引用和幻象引用的区别" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Oracle字符函数" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      强引用、软引用、弱引用和幻象引用的区别
+      Oracle字符函数
     </h1>
   
 
         
-        <a href="/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/" class="archive-article-date">
-  	<time datetime="2019-03-19T02:20:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
+        <a href="/2019/03/29/Oracle字符函数/" class="archive-article-date">
+  	<time datetime="2019-03-29T01:24:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-29</time>
 </a>
         
       </header>
@@ -190,34 +185,166 @@
 
 
         <p><strong>前言</strong></p>
-<p>在java语言中，除了原始数据类型（boolean、byte、short、char、int、float、double、long）的变量，其他所有都是所谓的引用类型，指向各种不同的对象。</p>
+<p>Oracle函数包含ASCII()、CHR()、CONCAT()、INITCAP()、INSTR()、LENGTH()、LOWER()、UPPER()、RPAD()、LPAD()、LTRIM() 、RTRIM() 、TRIM()、SUBSTR()、REPLACE()。</p>
 <a id="more"></a>
 
-<h2 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h2><p>强引用是使用最普遍的引用。如果一个对象具有强引用，那垃圾收器绝不会回收它。当JVM内存空间不足，Java虚拟机宁愿抛出<code>OutOfMemoryError</code>运行时错误，使程序异常终止，也不会靠随意回收具有强引用对象来解决内存不足的问题。设置堆大小为100M：<code>-Xmx100m</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrongReference</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">       <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">20</span>];</span><br><span class="line">       System.gc();</span><br><span class="line">       Thread.sleep(<span class="number">300</span>);</span><br><span class="line">       System.out.println(bytes == <span class="keyword">null</span>);</span><br><span class="line">       <span class="comment">// 虚拟机内存</span></span><br><span class="line">       Runtime rt = Runtime.getRuntime();</span><br><span class="line">       <span class="keyword">long</span> vmTotal = rt.totalMemory() / (<span class="number">1024</span> * <span class="number">1024</span>);</span><br><span class="line">       System.out.println(<span class="string">"JVM总内存空间为："</span> + vmTotal + <span class="string">" MB"</span>);</span><br><span class="line">       <span class="keyword">byte</span>[] bytes1 = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">90</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>1、ASCII()函数</strong></p>
+<blockquote>
+<p>定义：将字符转成ASCII码。</p>
+<p>语法：ASCII(single_character)</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT ASCII(&apos;x&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">ASCII(&apos;X&apos;)</span><br><span class="line">----------</span><br><span class="line">       120</span><br></pre></td></tr></table></figure>
 
-<p>输出结果如下：</p>
-<p><img src="//lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/1.png" alt="img"></p>
-<p>从上图可以看出，结果输出false，说明该对象没有被垃圾回收。当堆空间不足时，抛出<code>OutOfMemoryError</code>异常，使程序停止。</p>
-<h2 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h2><p>软引用是用来描述一些还有用但并非必须的对象，在<code>java.lang.ref</code>包中用<code>SoftReference</code>类表示。对于软引用关联着的对象，只有当 JVM 认为内存不足时，才会去试图回收软引用指向的对象。在抛出<code>OutOfMemoryError</code>之前，清理软引用指向的对象。</p>
-<p>应用场景： 软引用通常用来实现内存敏感的缓存。如果还有空闲内存，就可以暂时保留缓存，当内存不足时清理掉，这样就保证了使用缓存的同时，不会耗尽内存。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SoftReferenceTest</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">       <span class="comment">//设置50M缓存数据</span></span><br><span class="line">       <span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">50</span>];</span><br><span class="line">       <span class="comment">//将缓存数据用软引用持有</span></span><br><span class="line">       SoftReference&lt;<span class="keyword">byte</span>[]&gt; cache = <span class="keyword">new</span> SoftReference&lt;&gt;(data);</span><br><span class="line">       <span class="comment">//将缓存数据的强引用去除</span></span><br><span class="line">       data = <span class="keyword">null</span>;</span><br><span class="line">       System.out.println(<span class="string">"----回收前----"</span>);</span><br><span class="line">       System.out.println(data);</span><br><span class="line">       System.out.println(cache.get());</span><br><span class="line">       System.gc();</span><br><span class="line">       Thread.sleep(<span class="number">300</span>);</span><br><span class="line">       System.out.println(<span class="string">"----回收后----"</span>);</span><br><span class="line">       System.out.println(data);</span><br><span class="line">       System.out.println(cache.get());</span><br><span class="line">       <span class="comment">//再分配一个60M的对象</span></span><br><span class="line">       <span class="keyword">byte</span>[] data1 = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">60</span>];</span><br><span class="line">       System.out.println(<span class="string">"----分配后----"</span>);</span><br><span class="line">       System.out.println(data);</span><br><span class="line">       System.out.println(cache.get());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2、CHR()函数</strong></p>
+<blockquote>
+<p>定义：将ASCII码转换为字符</p>
+<p>语法：CHR(number_code)</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select CHR(120) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">CHR(120)</span><br><span class="line">--------</span><br><span class="line">	   x</span><br><span class="line">*/</span><br><span class="line">--替换字符串的换行符</span><br><span class="line">select replace(desc, chr(13),&apos;&apos;)  from dual;</span><br></pre></td></tr></table></figure>
 
-<p>输出结果如下：</p>
-<p><img src="//lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/2.jpg" alt="img"></p>
-<p>从上图可以看出，当JVM内存空间足够时，垃圾回收器不会回收该对象，当内存空间不够的时候，才会对这个对象进行回收。</p>
-<h2 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h2><p>弱引用在<code>java.lang.ref</code>包中用<code>WeakReference</code>类表示。弱引用的生命周期比软引用短。在垃圾回收时，不管当前JVM的内存空间是否足够，一旦发现具有弱引用的对象且没有任何强引用关联它，就会被回收。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WeakReferenceTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException</span>&#123;</span><br><span class="line">       <span class="comment">//设置50M缓存数据</span></span><br><span class="line">       <span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">50</span>];</span><br><span class="line">       <span class="comment">//将缓存数据用弱引用持有</span></span><br><span class="line">       WeakReference&lt;<span class="keyword">byte</span>[]&gt; cache = <span class="keyword">new</span> WeakReference&lt;&gt;(data);</span><br><span class="line">       System.out.println(<span class="string">"----回收前----"</span>);</span><br><span class="line">       System.out.println(data);</span><br><span class="line">       System.out.println(cache.get());</span><br><span class="line">       <span class="comment">//将缓存数据的强引用去除</span></span><br><span class="line">       data = <span class="keyword">null</span>;</span><br><span class="line">       System.gc();</span><br><span class="line">       Thread.sleep(<span class="number">300</span>);</span><br><span class="line">       System.out.println(<span class="string">"----回收后----"</span>);</span><br><span class="line">       System.out.println(data);</span><br><span class="line">       System.out.println(cache.get());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3、CONCAT()函数</strong></p>
+<blockquote>
+<p>定义：连接两个字符串</p>
+<p>语法：CONCAT(string1,string2)</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select concat(&apos;ab&apos;,&apos;cd&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">CONCAT(&apos;AB&apos;,&apos;CD&apos;)</span><br><span class="line">----------------</span><br><span class="line">            abcd</span><br></pre></td></tr></table></figure>
 
-<p>输出结果如下：</p>
-<p><img src="//lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/3.png" alt="img"></p>
-<p>从上图可以看出，当弱引用对象无其他指向它时，那么这个对象就会被垃圾回收。</p>
-<h2 id="幻象引用"><a href="#幻象引用" class="headerlink" title="幻象引用"></a>幻象引用</h2><p>幻象引用也叫虚引用，在<code>java.lang.ref</code>包中用<code>PhantomReference</code>类表示。无法通过幻象引用访问对象的任何属性或函数。如果一个对象仅持有幻象引用，那么他就和没有任何引用一样，在任何时候都可能被垃圾回收器回收。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PhantomReferenceTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       <span class="comment">//设置50M缓存数据</span></span><br><span class="line">       <span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span> * <span class="number">1024</span> * <span class="number">50</span>];</span><br><span class="line">       ReferenceQueue queue = <span class="keyword">new</span> ReferenceQueue();</span><br><span class="line">       <span class="comment">//将缓存数据用幻象引用持有</span></span><br><span class="line">       PhantomReference&lt;<span class="keyword">byte</span>[]&gt; cache = <span class="keyword">new</span> PhantomReference&lt;&gt;(data,queue);</span><br><span class="line">       System.out.println(cache.get()==<span class="keyword">null</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如需连接多个字符串可进行嵌套连接，也可用“||”进行连接。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">select concat(concat(&apos;ab&apos;,&apos;cd&apos;),&apos;ef&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">CONCAT(CONCAT(&apos;AB&apos;,&apos;CD&apos;),&apos;EF&apos;)</span><br><span class="line">------------------------------</span><br><span class="line">						abcdef</span><br><span class="line">*/</span><br><span class="line">select &apos;ab&apos;||&apos;cd&apos;||&apos;ef&apos; from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">&apos;AB&apos;||&apos;CD&apos;||&apos;EF&apos;</span><br><span class="line">----------------</span><br><span class="line">    	  abcdef</span><br></pre></td></tr></table></figure>
 
-<p>输出结果如下：</p>
-<p><img src="//lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/4.png" alt="img"></p>
-<p>虚引用主要用来跟踪对象被垃圾回收的活动。虚引用与软引用和弱引用的一个区别在于：虚引用必须和引用队列<code>ReferenceQueue</code>联合使用。当垃圾回收器准备回收一个对象时，如果发现它还有虚引用，就会在回收对象的内存之前，把这个虚引用加入到与之关联的引用队列中。程序可以通过判断引用队列中是 否已经加入了虚引用，来了解被引用的对象是否将要被垃圾回收。程序如果发现某个虚引用已经被加入到引用队列，那么就可以在所引用的对象的内存被回收之前采取必要的行动。</p>
+<p><strong>4、INITCAP()函数</strong></p>
+<blockquote>
+<p>定义：返回字符串并将字符串的第一个字母变为大写，其余变为小写。<strong>单词由空格,控制字符,标点符号等非字母符号限制。</strong></p>
+<p>语法：INITCAP(string1)</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT INITCAP(&apos;hello world&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">INITCAP(&apos;HELLOWORLD&apos;)</span><br><span class="line">----------------------</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+
+<p><strong>5、INSTR()函数</strong></p>
+<blockquote>
+<p>定义：在一个字符串中搜索指定的字符，返回发现指定的字符的位置。</p>
+<p>语法一：instr( string1, string2 )    /   instr(源字符串, 目标字符串)<br>语法二：instr( string1, string2 [, start_position [, nth_appearance ] ] )   /   instr(源字符串, 目标字符串, 起始位置, 匹配序号)</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">select instr(&apos;helloworld&apos;,&apos;l&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">INSTR(&apos;HELLOWORLD&apos;,&apos;L&apos;)</span><br><span class="line">-----------------------</span><br><span class="line">                      3</span><br><span class="line">*/</span><br><span class="line">--在&quot;helloworld&quot;的第2(e)号位置开始，查找第二次出现的“l”的位置</span><br><span class="line">select instr(&apos;helloworld&apos;,&apos;l&apos;,2,2) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">INSTR(&apos;HELLOWORLD&apos;,&apos;L&apos;,2,2)</span><br><span class="line">---------------------------</span><br><span class="line">                          4</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p><strong>6、LENGTH()函数</strong></p>
+<blockquote>
+<p>定义：返回字符串的长度。</p>
+<p>语法：LENGTH(string1)</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT LENGTH(&apos;Oracle数据库&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">LENGTH(&apos;ORACLE数据库&apos;)</span><br><span class="line">----------------------</span><br><span class="line">                     9</span><br></pre></td></tr></table></figure>
+
+<p>Oracle数据库中查询字节长度<strong>LENGTHB()</strong>。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT LENGTHB(&apos;Oracle数据库&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">LENGTHB(&apos;ORACLE数据库&apos;)</span><br><span class="line">-----------------------</span><br><span class="line">                     15</span><br></pre></td></tr></table></figure>
+
+<p><strong>7、LOWER()函数</strong></p>
+<blockquote>
+<p>定义：将表里的字段信息中含有字母的全部转成小写。</p>
+<p>语法：LOWER(string1)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT LOWER(&apos;哈哈ABCDEF&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">LOWER(&apos;哈哈ABCDEF&apos;)</span><br><span class="line">------------------------</span><br><span class="line">哈哈abcdef</span><br></pre></td></tr></table></figure>
+
+<p><strong>8、UPPER()函数</strong></p>
+<blockquote>
+<p>定义：将表里的字段信息中含有字母的全部转成大写</p>
+<p>语法：UPPER(string1)</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT UPPER(&apos;哈哈abcdef&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">UPPER(&apos;哈哈ABCDEF&apos;)</span><br><span class="line">------------------------</span><br><span class="line">哈哈ABCDEF</span><br></pre></td></tr></table></figure>
+
+<p><strong>9、RPAD()函数</strong></p>
+<blockquote>
+<p>定义：从右边对字符串使用指定的字符进行填充。</p>
+<p>语法：rpad(string,padded_length,[pad_string]) </p>
+<p>string 表示：被填充的字符串；　<br>padded_length 表示：字符的长度，是返回的字符串的数量，如果这个数量比原字符串的长度要短，rpad函数将会把字符串截取成从左到右的n个字符; 　　<br>pad_string 是个可选参数，这个字符串是要粘贴到string的右边，如果这个参数未写，lpad函数将会在string的右边粘贴空格。 </p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT RPAD(&apos;hello&apos;, 8, &apos;0&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">RPAD(&apos;HELLO&apos;,8,&apos;</span><br><span class="line">----------------</span><br><span class="line">hello000</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p><strong>10、LPAD()函数</strong></p>
+<blockquote>
+<p>定义：从左边对字符串使用指定的字符进行填充。</p>
+<p>语法：lpad( string, padded_length, [ pad_string ] )</p>
+<p>string：准备被填充的字符串；<br>padded_length：填充之后的字符串长度，也就是该函数返回的字符串长度，如果这个数量比原字符串的长度要短，lpad函数将会把字符串截取成从左到右的n个字符;<br>pad_string：填充字符串，是个可选参数，这个字符串是要粘贴到string的左边，如果这个参数未写，lpad函数将会在string的左边粘贴空格。</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT LPAD(&apos;hello&apos;, 8, &apos;0&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">LPAD(&apos;HELLO&apos;,8,&apos;</span><br><span class="line">----------------</span><br><span class="line">000hello</span><br></pre></td></tr></table></figure>
+
+<p><strong>11、LTRIM() 函数</strong></p>
+<blockquote>
+<p>定义：删除左边出现的字符串。</p>
+<p>语法：LTRIM(c1,[,c2])，C1 字符串，c2 追加字符串，默认为空格</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select ltrim(&apos;abcdefg&apos;,&apos;abc&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">LTRIM(&apos;A</span><br><span class="line">--------</span><br><span class="line">defg</span><br><span class="line">*/</span><br><span class="line">select ltrim(&apos;abcabadefg&apos;,&apos;abc&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">LTRIM(&apos;A</span><br><span class="line">--------</span><br><span class="line">defg</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p>LTRIM(c1,[,c2])函数是按照c2中的字符一个一个的截断c1的字符，而且还是从左开始执行的，一旦遇到c2中的字符，c1中的字符都会相对应的截断，一直到c1的字符没有c2的字符为止才会结束。</p>
+<p><strong>12、RTRIM() 函数</strong></p>
+<blockquote>
+<p>定义：删除右边出现的字符串。</p>
+<p>语法：RTRIM(c1,[,c2])，C1 字符串，c2 追加字符串，默认为空格</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select RTRIM(&apos;defgabc&apos;,&apos;abc&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">RTRIM(&apos;D</span><br><span class="line">--------</span><br><span class="line">defg</span><br></pre></td></tr></table></figure>
+
+<p><strong>13、TRIM()函数</strong></p>
+<blockquote>
+<p>定义：用来去除一个字符串的开头或结尾（或两者）的字符。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">TRIM([ &#123; &#123; LEADING | TRAILING | BOTH &#125;</span><br><span class="line">         [ trim_character ]</span><br><span class="line">       | trim_character</span><br><span class="line">       &#125;</span><br><span class="line">       FROM </span><br><span class="line">     ]</span><br><span class="line">     trim_source</span><br><span class="line">    )</span><br><span class="line">【参数】</span><br><span class="line">leading   开头字符</span><br><span class="line">trailing    结尾字符</span><br><span class="line">both        开头和结尾字符</span><br><span class="line">trim_character  去除的字符</span><br><span class="line">trim_source      修剪源</span><br></pre></td></tr></table></figure>
+
+<p><strong>用法：</strong></p>
+<p>（1）、如果指定leading参数，oracle数据库将去除任何等于trim_character的开头字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select trim(leading &apos;a&apos; from &apos;abc&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">TRIM</span><br><span class="line">----</span><br><span class="line">bc</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p>（2）、如果指定traling参数，oracle将去除任何等于trim_character的结尾字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select trim(trailing &apos;a&apos; from &apos;abcaa&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">TRIM(T</span><br><span class="line">------</span><br><span class="line">abc</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p>（3）、如果指定了both参数或者三个参数都未指定，oracle将去除任何等于trim_character的开头和结尾字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select trim(both &apos;a&apos; from &apos;abcaa&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">TRIM</span><br><span class="line">----</span><br><span class="line">bc</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p>（4）、如果没有指定trim_character参数，默认去除的值为空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select trim(both from &apos; abc &apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">TRIM(B</span><br><span class="line">------</span><br><span class="line">abc</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p>（5）、如果只指定修剪源（trim_source），oracle将去除trim_source的开头和结尾的空格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select trim(&apos; abc &apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">TRIM(&apos;</span><br><span class="line">------</span><br><span class="line">abc</span><br></pre></td></tr></table></figure>
+
+<p>（6）、trim函数返回一个varchar2类型值。该值最大的长度等于trim_source的长度。</p>
+<p>（7）、如果trim_source和trim_character有一个为null，则trim函数返回null。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select trim(trailing null from &apos;abcaa&apos;) from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">T</span><br><span class="line">-</span><br></pre></td></tr></table></figure>
+
+<p>trim_character和trim_source都可以为以下任意一种数据类型：CHAR, VARCHAR2， NCHAR, NVARCHAR2， CLOB, OR NCLOB。</p>
+<p><strong>14、SUBSTR()函数</strong></p>
+<blockquote>
+<p>定义：截取字符串</p>
+<p>语法1：substr(string string, int a, int b); 当a等于0或1时，都是从第一位开始截取</p>
+<p>语法2：substr(string string, int a) ;</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">select substr(&apos;HelloWorld&apos;,1,3) value from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">VALUE</span><br><span class="line">------</span><br><span class="line">Hel</span><br><span class="line">*/</span><br><span class="line">select substr(&apos;HelloWorld&apos;,-2,3) value from dual;</span><br><span class="line">/*查询结果</span><br><span class="line">VALUE</span><br><span class="line">------</span><br><span class="line">ld</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<p><strong>只要 |a| ≤ b,取a的个数；当 |a| ≥ b时，才取b的个数，由a决定截取位置</strong></p>
+<p><strong>15、REPLACE()函数</strong></p>
+<blockquote>
+<p>定义：用另外一个值来替代串中的某个值。</p>
+<p>语法：REPLACE ( char, search_string [, replace_string]) 如果没有指定replace_string 变量的值，那么当发现search_string 变量的值时，就将其删除。输入可以为任何字符数据类型——CHAR、VARCHAR2、NCHAR、NVARCHAR2、CLOB或NCLOB。</p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT REPLACE(&apos;我是中国人,我爱中国&apos;, &apos;中国&apos;, &apos;China&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">REPLACE(&apos;我是中国人,我爱中国&apos;,&apos;中国&apos;,&apos;CHINA&apos;)</span><br><span class="line">----------------------------------------------------</span><br><span class="line">我是China人,我爱China</span><br></pre></td></tr></table></figure>
+
+<p><strong>TRANSLATE()函数</strong></p>
+<blockquote>
+<p>返回将（所有出现的）from_str中的每个字符替换为to_str中的相应字符以后的string。TRANSLATE 是 REPLACE 所提供的功能的一个超集。如果 from_str 比 to_str 长，那么在 from_str 中而不在 to_str 中的额外字符将从 string 中被删除，因为它们没有相应的替换字符。to_str 不能为空。Oracle 将空字符串解释为 NULL，并且如果TRANSLATE 中的任何参数为NULL，那么结果也是 NULL。 </p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT TRANSLATE(&apos;我是中国人,我爱中国&apos;, &apos;中国&apos;, &apos;China&apos;) FROM DUAL;</span><br><span class="line">/*查询结果</span><br><span class="line">TRANSLATE(&apos;我是中国人,我爱中国&apos;,&apos;中国&apos;,&apos;</span><br><span class="line">----------------------------------------</span><br><span class="line">我是Ch人,我爱Ch</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -231,19 +358,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">强引用</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">软引用</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">弱引用</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">幻象引用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
         		</li>
       		
 		</ul>
@@ -255,11 +370,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/后端//" class="article-tag-list-link color3">后端</a>
+        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/后端/Java//" class="article-tag-list-link color5">Java</a>
+        			<a href="/categories/数据库/Oracle//" class="article-tag-list-link color2">Oracle</a>
         		</li>
       		
 		</ul>
@@ -314,7 +429,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/03/19/强引用、软引用、弱引用和幻象引用的区别/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lzxhh2017.github.io/2019/03/29/Oracle字符函数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -328,18 +443,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/21/Java中NIO原理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java中NIO原理
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/18/Java设计模式之原型模式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java设计模式之原型模式</div>
+    <a href="/2019/03/28/插入排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">插入排序</div>
       <i class="icon-circle-right"></i>
     </a>
   
